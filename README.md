@@ -1,3 +1,3 @@
 # texts
-this is test repo
-<h1>"hello test"</h1>
+text of diffrent programing lang
+<h1>"hello world"</h1>
