@@ -1,0 +1,112 @@
+algorithm:
+time complexity:
+time frequency count method,
+Asymptotic notation
+Rate of growths:
+1->constan,logn->logarithmic,n->linear,nlogn->linearlogarithmic,n^2->quadratic,n^3->cubic,2^n->exponential
+Big O-natation:take the biger var because it is the main changer in rate growth we can define it as the measure of performance of the algorithm by proving the order of growth of the function.
+also itgive the upper bound on a function (worst case)   
+5n^2+100n+300=O(n^2)
+12n^2+150n+600=O(n^2)
+2n^3+10n+3=O(n^3)
+4log2-(n)+30=O(log2-(n))
+big o -natation|O-(worst case):
+the low :o(g(n)),havec=constant-no(n node),such that f(n)=<c.g(n) for all n>=no:f(n)=2n+6|g(n)=n,c=4-(number biger than n constant in the orignale fun),2n+6=<4n,6=4n-2n,6=2n,no=3(for example)
+big omega -natation| -(best case)
+big theta -natation| -(average case)
+___________________________________________
+binary search:
+its way to reduce the number of possible possibilities.
+like:
+import random
+l=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100]
+low=int(l[0])
+high=int(l[-1])
+mid=int((low+high)/2)
+p=random.randint(1,100)
+print("the number",p)
+while mid!=p:
+    if high==p:print("end",high);break
+    elif low==p:print("end",low);break
+    elif p>mid:
+        low=mid
+        mid=int((low+high)/2)
+        print("low mid",mid)
+        if mid==p:print("end",mid);break
+    elif p<mid:
+        high=mid
+        mid=int((low+high)/2)
+        print("high mid",mid)
+        if mid==p:print("end",mid);break
+_____________________________________________________
+swap:
+def swap(x,y):
+    temp=x
+    x=y
+    y=temp
+    return x,y
+x=5;y=8
+print(x,y)
+print(swap(x,y))
+_______________________________________________
+selection sort:
+# def sormin():
+#     a=0
+#     n=int(len(l)-1)
+#     while n!=a:
+#         a+=1
+#         minindex=findmin(a)
+#         swap(l[a],l[minindex])
+#     print(minindex)
+# def findmin(sp):
+#     min =l[sp]
+#     minindex=sp
+#     a=0
+#     n=int(len(l)-1)
+#     while n!=a:
+#         a+=1
+#         if l[a]<min:
+#             min=l[a]
+#             minindex=a
+#         return minindex
+# def swap(x,y):
+#     temp=x
+#     x=y
+#     y=temp
+#     return x,y
+# # x=5;y=8
+# # print(x,y)
+# # print(swap(x,y))
+# print(sorted(l))
+# print(len(l))
+# # sormin()
+____________________________________
+recursion:the function call it self again in the same fun"some time it good and some it be wast of time "
+def factorial(n):
+    if n==0 or n==1:return 1
+    else:return n*factorial(n-1)
+print(factorial(int(input("wright the number: "))))
+_____________
+stack overflow: it happen when the fun break the limit ofthe memory that it taken
+
+____________________________
+def fib(x): _>O(n)
+    if x<=1:return x
+    n1=0;n2=1
+    a=1
+    while a!=x:
+        a+=1
+        n3=n1+n2
+        n1=n2
+        n2=n3
+        print (n3)
+    return n3
+print(fib(45))
+def fib_cur(x): _>O(2^n)
+    if x<=1:return x
+    else: return fib_cur(x-1)+fib_cur(x-2)
+print(fib_cur(40))
+
+
+
+

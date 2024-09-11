@@ -1,0 +1,537 @@
+cntrol+L to clean consol
+install.packages("languageserver")
+'<-' = '='___
+library(datasets)
+summary(iris)
+plot(iris)
+dev.off()
+--var--
+var<-'hello'
+typeof(var)
+first_null <- 100
+first_null
+x=100
+x
+y<-100L
+y
+typeof(x)
+typeof(y)
+a= TRUE
+typeof(a)
+a
+%>% is بايب
+__________________________________________________________________________
+math:
+100+100
+100*2
+100/2
+100**2
+100%%2
+100%%3
+______:
+x==y
+x!=y'!=not'
+x>=y
+result=y-x
+result
+res=x-y
+res
+_____________________________-
+datass<-read.csv("C://Users//ptof//Desktop//html//py.csv")
+datss<-read.csv("C:\\Users\\ptof\\Desktop\\html\\py.csv")
+datass
+datss
+head(datss)>top 5 valus
+View(datass)
+View(datss)
+ogs<-datss[datss$links=='http://go'&datss$prise==20&datss$brand=='ko'&datss$product=='k'&datss$drive==90&datss$trador==13&datss$takim==20,]
+ogs
+View(ogs)
+______________________________________---
+p=print(paste('hello','world'))
+pp=print(paste('hello','world',sep='_'))
+ppp=paste0('hello','world')
+ppp
+psp=paste('hello','world')
+psp
+mes='hello world in R'
+print(mes)
+=mes
+n=9
+n
+=print(n)
+l=10:30
+l
+class(l)
+com=1+2i
+com
+class(com)
+typeof(com)
+_________________________--
+to declear:
+s=c(1,2,3,4)
+print(s)
+ss=c('blue','green','red','black')
+print(ss)
+_______________________
+vector(one dimensional):
+ooo=10:20
+ooo
+vo=c('go','play','do')
+vp=c(1,34,56,78)
+v=vector("numeric",length = 8)
+ve=vector("logical",length = 8L)
+vv=print(c(v,ve))
+voo=print(c(ooo,vp,vo))
+class(voo)
+_____
+le=letters[1:26]
+le
+class(le)
+fa=as.factor(le)
+fa
+class(fa)
+nm=0:100
+nm
+as.numeric(nm)
+as.logical(nm)
+as.character(nm)
+
+_____
+attributes(v)
+_______________________________
+list:
+test=c('music',100,5)
+test
+class(test)
+typeof(test)
+tt=list('music',100,5)
+tt
+class(tt)
+typeof(tt)
+names(test)=c('type','num','stars')
+test
+class(test)
+typeof(test)
+test[1]
+test[[1]]
+test['type']
+cat=list(type='cat',reate=5,price='animal')
+cat
+str(cat)
+cat=list(type='cat',reate=5,price='animal')
+cat
+_____________
+matrix(tow dimensional)
+matr=matrix(1:6,nrow=3)
+matr
+matri=matrix(1:6,ncol=3)
+matri
+matrixx=matrix(1:6,ncol=3,nrow=3)#repeat valuse if you make wrong nrow&ncol   
+matrixx
+mat=matrix(letters[1:26],nrow=3)
+mat
+matt=matrix(1:6,nrow=2,byrow=TRUE)
+matt
+print(cbind(1:4,1:4))#col
+print(rbind(1:4,1:4))#row
+p=cbind(mat,c(matrixx))#المشترك
+rownames(p)<-c("row1","row2")
+colnames(p)<-c("col1","col2","col3")
+p
+____________________________________
+gatafram:
+name=c('sameh','eiad','hossam','kareem','mohamed')
+age=c(12,34,45,15,18)
+child=c(TRUE,FALSE,TRUE,FALSE,TRUE)
+name
+child 
+age
+df=data.frame(Name=name,Age=age,Childern=child)
+df
+str(df)
+#df[row,col]
+df[2,2]
+df[2,'Age']
+df[c(2,3),c('Age','Childern')]
+hight=c(123,121,115,129,190)
+df$Hight=hight#make change in df 
+gender=c('mal','mal','mal','mal','mal')
+cbind(df,gender)#not make change in df 
+tom=c('tom',25,FALSE,189)#not make change in df
+rbind(df,tom)
+sort(df$Age)
+rank=order(df$Age)
+rank
+df[rank,]
+even=seq(2,20,2)#first last by
+even
+
+evens=seq(from=21,by=2,length.out=10)#first last by
+evens
+pri=seq(100,220,22)
+pri
+names(pri)=paste0("p",1:6)
+
+v1=c(2,3,4)
+v2=c(5,6,7)
+
+v1*v2
+v1+v2
+v1-v2
+v1/v2
+sum(v1)
+min(v1)
+max(v1)
+sd(v1)
+var(v1)
+print(sqrt(v1))
+prod(v1)#مضروب العدد 2x3x4=gamma
+sum(v2)
+min(v2)
+max(v2)
+sd(v2)
+var(v2)
+prod(v2)
+pri[-2]
+print(c(NA))
+print(length((v1)))
+________________________________________
+days=c("sn","mo","t","w","th","fr","s")
+lists=c(12,2345,23456,3456,234,234,23456)
+le=length(days)
+nd=data.frame(Day=days,List=lists)
+rownames(nd)=c("col1","col2","col3","col4","col5","col6","col7")
+nd
+v=nd[(le-6):(le-5)]
+v
+
+_________________________
+st=matrix(c(20,30,40,80,90,NA,50,34,56,76,80,90,NA,50,34,56,76,98,NA,24),nrow=4,ncol=4,byrow = T)
+dimnames(st)=list(c('jone','mo','ka','so'),c('ph','bio','ar','e'))
+st
+mean(st[,4])#المتوسط
+help("apply")
+apply(st,1,sum)
+apply(st,1,mean)
+_________________________________
+days=c("sn","mon","t","wen","th","fri","S")
+rain=c(T,T,T,F,T,F,T)
+degree=c(12,23,34,43,21,45,34)
+var=data.frame(days,degree,rain)
+str(var)
+summary(var)
+subset(var,subset = rain==T)
+subset(var,subset = degree>20)
+sorted=order(var$degree)#من الصغير للكبير
+var(sorted,)
+var
+m=as.integer(runif(12,10,20))
+sal=data.frame(id=101:110,product=c("A","B"),price=as.integer(runif(10,100,200)),qtr=as.integer(runif(10,10,20)))
+sal
+sa=subset(sal,subset =product=="A" )#like filteration
+sb=subset(sal,subset =product=="B" )
+sb
+sa
+cbind(sa,sb)#by col
+rbind(sa,sb)#by row
+____________________________
+merge:
+m=merge(sal,var)
+v=merge(var,sal)
+______________________________________
+aggregate(sal$qtr,list(sal$product),sum,na.rm=T)#sum qtr in group (A&B)
+_____________________________
+v&l
+
+vector=c(12,78,89,6,654)
+lists=as.list(vector)
+lists
+vector
+un=unlist(lists)
+un=vector
+_________________
+is.list(lists)
+is.list(lists)
+i1=as.integer(10)
+i2=as.integer("10")
+i3=as.integer(10.7)
+abs(v)#all values in +
+
+______________________
+name="mohamed"
+nchar(name)#numper of elimnt
+substr(name,2,5)#choose part
+toupper(name)#make upper case 
+_______________________________
+if :
+x=30L
+y=c(30)
+if(is.integer(x)){print("x is int")}else{print("x is double")}
+if(is.integer(y)){print("x is int")}else{print("x is double")}
+if(n<7){print("ya")}else if(n==7){print("yaa")}else{print("noo")}
+
+while:
+v="hello world"
+count=2
+while(count<10 ){
+print(v)
+count=count+1}
+fors=c("mo","mesho","kola","mata","tia","so","ho")
+for(i in fors){print(i)}
+___________
+&= and
+|=or
+x=x+1-
+____________
+function:
+hello_world= function(){print("hello function")}
+hello_world()
+fn=function(name="mohamed"){print(paste("hello",name,sep='_'))}
+fn()
+fn("mesho")
+pri=function(price){
+  taxes=price/5
+  np=price+taxes
+  print(np)
+}
+pri(100)
+_____________________________
+nor=rnorm(1000,0,1)#random values>(num,mean,sp)
+?rnorm=help(rnorm)
+hist(nor,50)=hist(nor,breaks=50)
+____________
+message("message in nconsol")
+___________
+salr=function(band){
+  range=switch(band,
+              eng=9800,
+              doc=8900,
+              farm=9000
+  )
+  return(range)
+}
+salr("eng")
+salr("doc")
+
+time=10
+repeat{   # in repeat values(var:time) change not like while loop
+  message("time is repeating")
+  if (time >=20)break
+  time=time+2
+}
+____________________
+s=seq(1,10,by=2)
+v=c(00,99,56,333,65,67,100)
+rev(v)#يعكس
+sort(v)#يرتب
+append(s,v)
+bb=c("d","q","f","s","b","n","d","g","n")
+bbb=factor(bb)
+bbbb=factor(bb,levels = c("d","n","g","s"))
+bbbb            
+vvb=factor(bb,labels = c("AB","CVB","FGTH","LKJ"),levels = c("d","n","g","s"))
+vvb
+____________________
+date:
+Sys.Date()#today date
+d=c("2020-08-07")
+> as.Date(d)
+_____________________________
+
+install.packages(c("pkg1", "pkg2"))
+install.packages("DBI")
+library('DBI')
+install.packages('dblyr')
+library('dblyr')
+install.packages('nycflihts13')
+library('nycflihts13')
+head(flights)
+View(flights)
+#search about this fun if you could install the fucking package(NOT UNDER STANDING)
+#filter
+#slice
+#mutate
+#summary
+#arrange
+#sample
+#%>% =cntrol+  shift + m :%>% is typing
+______________________________________________
+install.packages('tidyr')
+library('tidyr')
+n=10
+
+wide=data.frame(
+  id=c(1:n),
+  face1=c(345,9964,2687,2543,873,987,3876,676,90,988),
+  face2=c(97,4344,9872,8743,963,876,46563,8897,70,768),
+  face3=c(685,9864,7652,7654,463,785,8763,260,60,8765)
+)
+View(wide)
+#gather
+longs=wide %>% gather(Face,ResponseTime,face1:face3)
+View(longs)
+
+seps=longs %>% separate(Face,Target,Number,c(1:30))
+View(seps)
+uni=seps %>% unite(Face )
+View(uni)
+back_to_wide=uni %>% spread(id,Face,ResponseTime)
+View(back_to_wide)
+
+install.packages('datasets')
+plot(ChickWeight)
+library(MASS)
+plot(UScereal$sugars,UScereal$calories)
+title('plot(UScereal$sugars,UScereal$calories)')
+x=UScereal$sugars
+y=UScereal$calories
+library(grid)
+grid.rect()
+grid.xaxis()
+grid.yaxis()
+grid.points()
+grid.text('UScereal$calories',x=unit(-3,"lines"),rot=90)
+grid.text('UScereal$sugars',y=unit(-3,"lines"),rot=0)
+popViewport(2)
+
+#create plots
+x=c(23,89,56,90)
+lables=c('shambo','creem','phone','Labtop')
+pie(x,lables)#create type of graf circle
+pie(x,lables,main = 'city of no thing',col=rainbow(length(x)))
+pier=round(100*x/sum(x),1)
+pie(x,pier,main = 'city of no thing',co=rainbow(length(x)))
+legend("topright",c('shambo','creem','phone','Labtop'),cex = 0.8,fill=rainbow(length(x)))
+help(rainbow)#create color
+help(length)
+install.packages("plotrix")
+library("plotrix")
+#create 3d
+x=c(23,89,56,90)
+lab=c('shambo','creem','phone','Labtop')
+pie3D(x,lables=lab)#create type of graf circle
+pie3D(x,lables=lab,explode = 0.1,main = 'pie3D',col=rainbow(length(x)))
+pie3D(x,lables=lab,explode = 0.1,main = 'pie3D')
+pie3D.labels(x,lab,explode = 0.1,main = 'pie3D')
+##hist
+hist(x,xlab = "weigh",col="blue",border = "red")
+hist(x,xlab = "weigh",col="blue",border = "red",xlim = c(0,40),ylim = c(0,5),breaks=5)
+
+#############
+data("airquality")
+View(airquality)
+plot(airquality$Ozone,airquality$Wind)
+plot(airquality$Ozone,airquality$Wind,col="green")
+plot(airquality$Ozone,airquality$Wind,type = "h",col="blue")
+plot(airquality)
+
+hist(airquality$Solar.R)
+#########
+boxplot(airquality[,0:4],main='Multiple box plots')
+boxplot(airquality,main='Multiple box plots')
+
+#####
+install.packages("ggplot2")
+library("ggplot2")
+p1=ggplot (mtcars,aes(factor(cyl),mpg)
+p1+geom_boxplot()
+p1+geom_boxplot()+coord_flip()
+p1+geom_boxplot(aes(fill=factor(cyl)))
+###################################
+nstall.packages("mice")
+library("mice")
+han=nhanes
+han$hyp=as.factor(han$hyp)
+summary(han)
+which(is.na(han$bmi))
+han$bmi[which(is.na(han$bmi))]=mean(han$bmi,na.rm=T)
+han$chl[which(is.na(han$chl))]=mean(han$chl,na.rm=T)
+ha=nhanes
+methods(mice)
+hahyp=as.factor(ha$hyp)
+myimp=mice(ha,m=5,method=c("","pmm","logreg","pmm"),maxit = 20)
+summary(ha)
+summary(myimp)
+summary(myimp$bim)
+myimp$imp$bim
+final=complete(myimp,5)
+
+#project
+
+mydata=read.csv("C:\\Users\\ptof\\Desktop\\html\\R\\R tutorial demo files\\R tutorial demo files\\Data files\\Salaries.csv",header = T)
+mydata
+View(mydata)
+tail(mydata)
+head(mydata)
+row.names(mydata)
+mydata['600']
+summary(mydata)
+str(mydata)
+
+md2=readxl::read_xlsx("C:\\Users\\ptof\\Desktop\\html\\R\\R tutorial demo files\\R tutorial demo files\\Data files\\pokemon.xlsx")
+md2
+View(md2)
+d=as.Date(md2$Speed)
+d
+head(md2)
+class(md2)
+str(md2)
+y=as.numeric(format(d,'%y'))
+head(y)
+m=as.numeric(format(d,'%m'))
+head(m)
+da=as.numeric(format(d,'%d'))
+head(da)
+
+pd=cbind(md2,y,m,da)
+pd
+
+plot(md2[,5],type='l',xlab='year',ylab='con')
+plot(md2[,5])
+   
+
+
+par(mfrow=c(1,1))
+plot(md2[,5],ylim=c(1,160),xlim=c(1,150),xlab="xdata",ylab="ydata",col='blue')
+plot(mydata[,5],ylim=c(700,1011),xlim=c(600,1500),xlab="xdata",ylab="ydata",type = "l")
+install.packages("ggplot2")
+library("ggplot2")
+
+
+ggplot(data = mydata[,5],type="o")+geom_line(aes(x=mydata$OvertimePay,y=mydata$BasePay,group=1))
+ggplot(data = mydata[,5],aes(x=ye,y=m,group=1))+geom_line()+geom_point()
+
+
+#solar
+min(mydata[,5],na.rm=T)
+max(md2[,5],na.rm=T)
+
+
+jj=as.Date(mydata$Year)
+cc=cbind(jj,mydata)
+ss=subset(cc,subset=cc$jj>='1975-07-05')
+ss
+ppt=plot(ss[,1],ss[,11],xlab='years',main = 'consumption',col='orange',ylab ='total')
+plot(jj,xlab='years',main = 'consumption',col='orange',ylab ='total')
+grid()
+abline(V=c("0","100000"))
+boxplot(mydata$Year)
+abline(h=c("2011.0","2013.0"))
+
+boxplot(md2$HP~md2$Attack) :grouping
+######################
+nrow(md2)
+ncol(md2)
+sum(is.na(mydata$Status[which(mydata$Id>50)]))
+###################
+
+ggplot(mpg,aes(x=cty))+geom_histogram()+labs(x="cty",y='coun')
+ggplot(mpg,aes(x=cty))+geom_freqpoly()+labs(x="cty",y='coun')
+ggplot(mpg,aes(x=cty,color=class))+geom_freqpoly()+labs(x="cty",y='coun')
+ggplot(mpg,aes(x=cty))+geom_freqpoly()+labs(x="cty",y='coun')
+ggplot(mpg,aes(x=cty))+geom_histogram()+geom_freqpoly()+labs(x="cty",y='coun')
+ggplot(mpg,aes(x=cty,y=hwy))+geom_point()+labs(x="cty",y='coun')
+ggplot(mpg,aes(x=cty,y=hwy,color=class))+geom_point()+labs(x="cty",y='coun')
+ggplot(mpg,aes(x=cty,y=hwy))+geom_point()+labs(x="cty",y='coun')+geom_smooth(method = "lm",col="green")
+

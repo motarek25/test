@@ -1,0 +1,170 @@
+its a database system.
+there are many data base system like : MYSQL ,MICROSOFT SQL SERVER ,ORACLE ,SYBASE IBM DB2
+DBMS is a ring bettwen data and user .
+
+there are 1-> relation(RDBMS) and 2->nonrelation data
+RDBMS:like mysql
+#http://localhost/phpmyadmin/index.php?route=/server/databases  -> by use xampp
+
+code:
+create database first_3 ;  #to create the data
+
+create table learn_2(    # create table with his colum
+id int,
+name varchar(50),
+data date,
+gender varchar(50),
+email varchar(50)
+)
+create table test_2(
+id int not null unique,
+name varchar(50) not null,
+age smallint check (age>=15),
+gender varchar(50) ,
+phone int not null unique,
+town varchar(25) not null default 'cairo'
+)
+# insert:
+ insert into  first_3.learn (id,name ,data,gender,email) values (1,"mohamed","2005-08-09","M","mo@gmail.com" )
+#multy insert:
+insert into  first_3.test (id,name ,data,gender,email)
+--  values 
+-- (1,"mohamed","2005-08-09","M","mo@gmail.com" ),
+-- (2,"ahmeed","2008-08-12","M","ah@gmail.com" ),
+-- (3,"hossam","2006-06-06","M","ho@gmail.com" ),
+-- (4,"gazy","2004-08-09","M","ga@gmail.com" ),
+-- (5,"Ataya","2005-07-09","M","at@gmail.com" ),
+-- (6,"hindo","2005-01-09","M","hi@gmail.com" ),
+-- (7,"dado","2006-08-03","M","da@gmail.com" ),
+-- (8,"basbosa","2001-08-02","M","ba@gmail.com" );
+#select ,where ,(operator->,and,or,not,in,not in,):
+select * from test_2
+select id,name,phone from test_2
+select id as num,name as first_name ,phone from test_2
+
+elect * from test_2 
+where id=5
+where age>20
+where town ='cairo'
+where town !="cairo"
+where gender !="M"
+where gender !="M" and town ='cairo'
+where gender ="M" and age >17 and town="cairo"
+where gender ="M" and age >17 and town="cairo" and id>=5
+where gender ="M"   and id>=5 or town="cairo"
+where not town="cairo"
+where not (town="cairo"or town="banha" or town="aswan"or town="alex")
+where age in (17,25,20,18,15)#the value in the (....)
+where id in (5,7,9)
+where id not in (5,7,9) #the value not in the (....)
+where age between 17 and 25 #the value between [....,....]
+select * from test
+where data between 2001-08-02 and 20015-08-09
+#like
+L:letter-s
+'L%':start with this L
+'%L':end with this L
+'L1%L2':start with this L1 and end with L2
+'%L%':contain this L
+'_L%': have L in second position
+'_L%': have L in third position
+'L_%-%':have L in first position and have at least 3 caracters
+select * from test
+-- where name like 'm%'
+-- where name like '%d'
+-- where name like '%med%'
+-- where name like 'm%d'
+-- where name like '_h%'
+-- where name like 'h_%_%'
+where name like '__m%'
+#order and distinct
+-- order by name 
+-- order by id # حسب ترتب ال id
+-- order by id desc #desc:عكس الترتيب
+-- order by name desc  
+-- select  town from test_2
+-- select distinct town from test_2 # the diffrence between this two is first repeat if the are more than one ,this line show only one from the caracter 
+#limit
+where town = "cairo" limit 2;
+where town = "cairo" order by name  limit 2;
+#offoffset
+where town = "cairo" order by name  limit 5,3;
+where town = " cairo" order by name   limit 5 offset 1;
+#والتاني هو ال اليمت offsetالاول هو ال
+#alter and drop
+alter table test add new varchar(50)
+alter table test modify column new int ;
+drop table test_2
+#count , max ,min
+select count(id) as total from test
+-- select max(id) as max from test
+select min(id) as min from test
+# update
+update test  set new = 1899  where id =9 # to update the valof colum
+update test  set new =2000,  new =2500, new =3000, new =5000, new =7000  where id in (3,4,6,7,9) ;
+update test  set new =2000,  name ="kareem"  where id in (3,4) ;
+# commit
+SELECT * FROM first_3.test;
+commit;
+use first_3;
+update test
+set new= 1500 where id =3
+----
+SELECT * FROM first_3.test;
+commit;
+update test
+set new= 1400 where id =2
+
+SELECT * FROM first_3.test;
+commit;#se when to stop otu save
+use first_3;
+update test
+set new= 1800 where id =2;
+update test
+set new= 1700 where id =3;
+rollback; # to delete the last change
+#primery key:
+create table country(
+id int not null auto_increment,
+country_name varchar(50) not null,
+primary key(id));
+insert into country(country_name) values ("EGYPT"),("MALY"),("ALGERIA"),("KUITE");
+#forgein , join
+create table joins (
+id int not null,
+id_foregein int not null,
+name varchar(30) not null,
+country_name varchar(45) not null,
+age int ,
+primary key(id),
+foreign key(id_foregein) references country(id)
+);
+
+select * from joins  inner join country on joins.id_foregein =country.id;
+select * from joins j  inner join country c on j.id_foregein =c.id
+select j.id,c.country_name,j.age from joins j  inner join country c on j.id_foregein =c.id
+
+select * from joins j  left join country c on j.id_foregein =c.id;#join left(j) and match with right(c)
+select * from joins j  right join country c on j.id_foregein =c.id;#right(c) and match with join left(j)
+select * from joins cross join country # to join every caracter in first(joins) to the second(country)
+select count(name) as t from joins cross join country
+
+_multiple join
+select * from test join test_2 on test.id=test_2.id
+join country on test.id= country.id  join  joins on country.id=joins.id_foregein;
+tricks:
+select max(salary) as SecondHighestSalary from Employee where salary  not in (select max(salary) from Employee );
+DATEDIFF(w1.recordDate, w2.recordDate) = 1# data diff = ..
+
+select x,y,z, 
+case when x+y>z and x+z>y and y+z>x then 'Yes' else 'No' end as triangle from triangle
+
+SELECT id,
+
+    CASE 
+        WHEN p_id IS NULL THEN 'Root'
+        WHEN id IN (SELECT p_id FROM Tree)THEN 'Inner'
+        ELSE 'Leaf'
+        END AS type
+ FROM Tree
+		

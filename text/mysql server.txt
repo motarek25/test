@@ -1,0 +1,264 @@
+create table tbcities
+(
+city_id int primary key identity (1,1),
+city_name  nvarchar(100)
+)
+_____________________________________________________________________
+and , or ,(not=):(<>)
+The SELECT DISTINCT statement is used to return only distinct (different) values.
+The MOD() function returns the remainder of a number divided by another number.
+_____________________________________________________________________
+select Department_id,Department_name
+from TbDepartment
+
+select * from Tbjop
+where  jop_id=2
+
+select Department_name
+from TbDepartment
+where Department_name='sells'
+
+select *
+from TbDepartment
+where Department_name like '%section'>لو اخر الكلام
+
+select *
+from TbDepartment
+where Department_name like 'mange%' >لو اول الكلام
+
+select *
+from TbDepartment
+where Department_name like '%mange%' >لو في الكلام
+
+select *
+from TbDepartment
+where Department_name not like '%mange%' >لو مش موجوده في الكلام
+
+select *
+from TbDepartment
+where Department_name like 'mange%' and Department_id=9
+
+
+select *
+from TbDepartment
+where Department_id in (1,3,5)
+select *
+from TbDepartment
+where Department_id not in (1,3,5)
+
+select *
+from TbDepartment
+where Department_id between 1and 5
+select* from TbDepartment
+order by Department_name
+
+select* from TbDepartment
+order by Department_name (desc)="عكس الترتب"
+
+
+select *
+from TbDepartment
+where Department_id in (1,3,5)
+order by Department_name
+
+select top 2
+from TbDepartment
+
+select top 1
+from TbDepartment
+order by Department_name desc >يجبلك اخر واحد 
+
+select top 2
+from TbDepartment
+__________________________________
+
+insert into Tbemp 
+values (
+9,
+'adam',
+'3-6-2011',
+400,
+5,1, 
+'work from company',
+'4-11-2002',
+93635,1)
+_________________________________
+
+update Tbemp
+set salary=2200
+where city_id =1
+select* from Tbemp
+__________________________________
+delete from Tbemp 
+where  jop_id =1
+select* from Tbemp
+________________________________
+how to back up data :goto data click right tasks 
+________________________________________________
+select* from(select course_name from Tbcourse where total_time<30) as miniCorse
+select course_name from Tbcourse
+select 'mohamed' as Number
+select 'course_name: '+course_name as new_course_name from Tbcourse 
+______________________________________________________
+select sum (total_time) as sum from Tbcourse
+select max (total_time) as max from Tbcourse
+select min (total_time) as min from Tbcourse
+select avg (total_time) as avg from Tbcourse
+select count (total_time) as count from Tbcourse
+select sum (total_time)as sum ,max (total_time) max ,min (total_time) as min,avg (total_time) as avg,(select count(*) from Tbstudent)as new from Tbcourse
+____________________________________________________________
+group by:(sum,cont,min,max)مع الي فوق بس
+select count(Tbcourse.course_id),student_name
+from 
+Tbcourse
+join Tbstudentcourse on Tbcourse.course_id =Tbstudentcourse.course_id 
+join Tbstudent on Tbstudent.student_id =Tbstudentcourse.course_id 
+group by student_name
+_________________________________________________________
+select sum(Tbcourse.total_time),student_name
+from 
+Tbcourse
+join Tbstudentcourse on Tbcourse.course_id =Tbstudentcourse.course_id 
+join Tbstudent as s on s.student_id =Tbstudentcourse.course_id 
+group by student_name
+having sum(Tbcourse.total_time)>=120
+______________________________________________________
+union:union all يلاحظ ان الي في السلكتلات لازم يكون زي بعض عشان كده الكود مش هيشتغل وفي حاجه اسمها 
+select  FirstName,Phone,City from 
+SalesLT.Customer 
+join SalesLT.CustomerAddress on Customer.CustomerID=CustomerAddress.CustomerID
+join SalesLT.Address  on CustomerAddress.AddressID=Address.AddressID
+union
+select OrderQty ,UnitPrice,Culture from 
+SalesLT.SalesOrderDetail 
+join SalesLT.Product on SalesOrderDetail.ProductID=Product.ProductID
+join SalesLT.ProductModel  on ProductModel.ProductModelID=Product.ProductModelID
+join SalesLT.ProductModelProductDescription on ProductModelProductDescription.ProductModelID=Product.ProductModelID
+
+better example and worked :)-> 
+select GETDATE()
+union
+select day( GETDATE())
+union
+select month(GETDATE())
+union
+select year(GETDATE())
+_____________________________________________________________________________________
+create view :
+create view Vwtry_view
+as 
+select OrderQty ,UnitPrice,Culture from 
+SalesLT.SalesOrderDetail 
+join SalesLT.Product on SalesOrderDetail.ProductID=Product.ProductID
+join SalesLT.ProductModel  on ProductModel.ProductModelID=Product.ProductModelID
+join SalesLT.ProductModelProductDescription on ProductModelProductDescription.ProductModelID=Product.ProductModelID
+
+select * from Vwtry_view
+______________________________________________________
+select  FirstName,Phone,city,len(City),REPLACE(Phone,'-','_') from 
+SalesLT.Customer 
+join SalesLT.CustomerAddress on Customer.CustomerID=CustomerAddress.CustomerID
+join SalesLT.Address  on CustomerAddress.AddressID=Address.AddressID
+______________________
+select GETDATE()
+select day( GETDATE())
+select month(GETDATE())
+select year(GETDATE())
+
+select datediff(day,'8-9-2005',GETDATE()) as day
+select datediff(month,'8-9-2005',GETDATE())as month
+select datediff(year,'8-9-2005',GETDATE())as year
+_____________________________________________________________
+create schema HR
+
+to select schema ->
+select * from HR.try_schema
+___________________________________________________
+convert:
+select convert(nvarchar(25),SalesLT.Customer.Phone) from  SalesLT.Customer
+select convert(nchar,SalesLT.Customer.Phone) from  SalesLT.Customer
+____________________________________________________________
+isnull:
+select ISNULL(SalesLT.Customer.Suffix,'no') from  SalesLT.Customer
+_______________________--
+case:
+select *, (case when (SalesLT.Customer.Suffix is null) then ISNULL(SalesLT.Customer.Suffix,'no') end)
+from  SalesLT.Customer
+select *, (case when (SalesLT.Customer.CustomerID >10) then SalesLT.Customer.CustomerID+5 else SalesLT.Customer.CustomerID-1 end)
+from  SalesLT.Customer
+ 
+select *, (case when (SalesLT.Customer.CustomerID >10) then SalesLT.Customer.CustomerID+5 when (SalesLT.Customer.CustomerID =5) then SalesLT.Customer.CustomerID-5 else SalesLT.Customer.CustomerID-1 end)
+from  SalesLT.Customer
+_________________________--
+procedure:
+create procedure SPprocedure
+as
+select OrderQty ,UnitPrice,Culture from 
+SalesLT.SalesOrderDetail 
+join SalesLT.Product on SalesOrderDetail.ProductID=Product.ProductID
+join SalesLT.ProductModel  on ProductModel.ProductModelID=Product.ProductModelID
+join SalesLT.ProductModelProductDescription on ProductModelProductDescription.ProductModelID=Product.ProductModelID
+_____
+create procedure SPdo
+(
+@ProductCategoryID int
+)
+as
+select OrderQty ,UnitPrice,Culture from 
+SalesLT.SalesOrderDetail 
+join SalesLT.Product on SalesOrderDetail.ProductID=Product.ProductID
+join SalesLT.ProductModel  on ProductModel.ProductModelID=Product.ProductModelID
+join SalesLT.ProductModelProductDescription on ProductModelProductDescription.ProductModelID=Product.ProductModelID
+where Product.ProductCategoryID=@ProductCategoryID
+
+exec SPdo  18
+
+altr&if:
+alter procedure SPdo
+(
+@ProductModelID int
+)
+as
+if (@ProductModelID=0)
+begin
+select ProductModelID from SalesLT.Product
+end
+else
+begin
+select OrderQty ,UnitPrice,Culture from 
+SalesLT.SalesOrderDetail 
+join SalesLT.Product on SalesOrderDetail.ProductID=Product.ProductID
+join SalesLT.ProductModel  on ProductModel.ProductModelID=Product.ProductModelID
+join SalesLT.ProductModelProductDescription on ProductModelProductDescription.ProductModelID=Product.ProductModelID
+where Product.ProductModelID=@ProductModelID
+end
+exec SPdo  0
+_________________________________-
+alter procedure SPdo
+(
+@ProductModelID int
+)
+as
+if (@ProductModelID=0)
+begin
+declare @id int
+set @id=1000
+select @id 
+select * from SalesLT.Product
+end
+exec SPdo  0
+________________________________
+SUBSTRING((CITY),1,1) in('A','E','I','O','U');
+SUBSTRING(REVERSE(CITY),1,1) in('A','E','I','O','U');
+_____________________________
+Note:
+AVG function used to get the average of the values of all the records in the specified column name passed to the function.
+CEIL function used to get the nearest integer of the original number passed to the function. (The output will be always greater than or equal to the original number).
+Eg. CEIL(2.34) will return 3
+round=rounded down to the nearest integer
+REPLACE function is used to replace all occurrences of the substring within an input string with another substring. Here, '0' is replaced with a blank ('') character
+count=to get the len
+sum()=to sum
+
+max()=max value
+min()=min value

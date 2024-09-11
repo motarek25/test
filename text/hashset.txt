@@ -1,0 +1,27 @@
+class MyHashSet(object):
+
+    def __init__(self):
+        self.hash=[[]]*100
+    def add(self, key):
+        hash_val=key%100
+        if key not in self.hash[hash_val]:
+            self.hash[hash_val].append(key)
+        
+    def remove(self, key):
+        hash_val=key%100
+        if key in self.hash[hash_val]:
+            self.hash[hash_val].remove(key)
+        
+        
+
+    def contains(self, key):
+        hash_val=key%100
+        return key in self.hash[hash_val]
+        
+
+
+# Your MyHashSet object will be instantiated and called as such:
+# obj = MyHashSet()
+# obj.add(key)
+# obj.remove(key)
+# param_3 = obj.contains(key)

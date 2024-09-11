@@ -1,0 +1,1102 @@
+its cross platform and portable language and high perfotmance ,it middel lang:
+#include <iostream>// it is header have  function in it
+// int main(){
+//     std ::cout << "i like pizza" << std::endl ;
+//     std ::cout <<"it is realy good" << '\n';
+//     return 0;
+//     /*
+//     multi-line
+//     comment
+    
+//     */
+// }
+// // std::endl=='\n'
+//vars
+// int main(){
+//     int x;//declaration
+//     x=5;//assignment
+//     int y=10;
+//     int sum=x+y;
+//     double price =13.456;
+//     char let ='$';
+//     char ch ='A';
+//     bool t =true;
+//     bool f =false;
+//     std::string name="mohamed tarek";
+//     std::string country="Egypt";
+
+//     std::cout<<x<<'\n';
+//     std::cout<<y<<'\n';
+//     std::cout<<sum<<'\n';
+//     std::cout<<price<<'\n';
+//     std::cout<<let<<'\n';
+//     std::cout<<ch<<'\n';
+//     std::cout<<t<<'\n';
+//     std::cout<<f<<'\n';
+//     std::cout<<name<<'\n';
+//     std::cout<<country<<'\n';
+//     std::cout<<"Hello "<<name<<"you are from "<<country<<" right"<<'\n';
+//     return 0;
+// }
+// types of var
+//int for only integar num not float
+//double for floats num
+//boolean(True or flase)
+//char for single character only
+// string 
+
+// const keyword: the var cannot change any more
+//name spaces when you creat name space you can give for the same var differant values  
+// namespace first {
+//     int x=5;
+// }
+// int main(){
+//     const double PI =3.14;
+//     double pi =3.14;
+//     double r=10;
+//     double circumference=2*PI*r;
+//     int x=1;
+//     const int light_speed=299792458;
+//     std::cout<< circumference<<"cm"<<'\n';
+//     std::cout<<light_speed<<"m/s"<<'\n';
+//     std::cout<<x<<'\n';
+//     std::cout<<first::x<<'\n';
+//     using namespace first;//give the val of this name space
+//     std::cout<<x<<'\n';
+//     using std::cout;
+//     using std::string;
+//     cout <<"using std::cout";
+//     return 0;
+// }
+// #include <vector>
+// typedef std::vector<std::pair<std::string,int>> pairlist_t;
+// typedef std::string text_t;//=using text_t=std::string;
+// typedef int num_t;//=using num_t=int ;
+// int main(){
+//     pairlist_t pairlist;
+//     text_t name="mo";
+//     num_t age=19;
+//     std::cout <<name <<'\n';
+//     std::cout <<age <<'\n';
+//     return 0;
+// }
+
+// int main(){
+//     int  num=15;
+//     num+=1;//num=num+1
+//     num-=1;
+//     num+=2;
+//     num-=2;
+//     num++;
+//     num--;
+//     num*=2;
+//     num/=2;
+//     int odd=num%2;//if not 0 is odd
+//     //val conversion
+//     char d=100;//not print num because the char
+//     int deg=80;
+//     int full=100;
+//     double score= deg/(double)full*100;
+//     std::cout<<num<<'\n';
+//     std::cout<<odd<<'\n';
+//     std::cout<<d<<'\n';
+//     std::cout<<score<<'%'<<'\n';
+//     return 0;
+// }
+//input:
+// int main(){
+//     std::string name;
+//     std::cout<<"whats your name ?";
+//     std::getline(std::cin>>std::ws,name);//getline:to wright str with spaces
+//     int age;
+//     std::cout<<"whats your age ?";
+//     std::cin>>age;
+//     std::cout<<"Hello "<<name<<" you have "<<age<<" years old";
+    
+//     return 0;
+// }
+// math fun
+#include<cmath>//https://cplusplus.com/reference/cmath/  to more details
+// int main (){
+//     using std::cout;
+//     double x=3;
+//     double d=4.4;
+//     double y=5;
+//     double z;
+    // z=std::max(x,y);
+    // z=std::min(x,y);
+    // z=pow(x,3);
+    // z=sqrt(9);
+    // z=abs(-9);
+    // z=round(d);/to nearest val
+    // z=ceil(d);//to big val
+    // z=floor(d);//back to the min val
+//     cout<<z;
+//     return 0;
+// }
+
+// int main(){
+//     double x;
+//     double y;
+//     std::cout<<"wright first l: ";
+//     std::cin>>x; 
+//     std::cout<<"wright secound l: ";
+//     std::cin>>y; 
+//     double z=sqrt(pow(x,2)+pow(y,2));
+//     std::cout<<z; 
+//     return 0;
+// }
+
+// if 
+// int main(){
+//     int age;
+//     std::cout<<"whats your age: ";
+//     std::cin>>age;
+//     if (age>=18){
+//         std::cout<<"welcome in the site";
+//     }
+//     else if(age<=0){
+//         std::cout<<"wronge";
+//     }
+//     else{
+//         std::cout<<"you are yonger to go to site";
+//     }
+//     return 0;
+// }
+// switch
+// int main(){
+//     int month;
+//     std::cout<<"num of mon: ";
+//     std::cin>>month;
+//     switch (month)
+//     {
+//     case 1:std::cout<<"it JAN";break;
+//     case 2:std::cout<<"it F";break;
+//     case 3:std::cout<<"it MARS";break;
+//     case 4:std::cout<<"it A";break;
+//     case 5:std::cout<<"it M";break;
+//     case 6:std::cout<<"it Y";break;
+//     case 7:std::cout<<"it JO";break;
+//     case 8:std::cout<<"it A";break;
+//     case 9:std::cout<<"it S";break;
+//     case 10:
+//         std::cout<<"it O";
+//         break;
+//     case 11:std::cout<<"it N";break;
+//     case 12:std::cout<<"it D";break;
+//     default:std::cout<<"inter num from 1 to 12";
+//     }
+// }
+//cal
+// int main(){
+//     char op;
+//     double num1;
+//     double num2;
+//     double res;
+//     std::cout<<"*******************calculator******************"<<'\n';
+//     std::cout<<"chose the operation from (+ - * / p q ): ";
+//     std::cin>>op;
+//     std::cout<<"wight number 1: ";
+//     std::cin>>num1;
+//     std::cout<<"wight number(-power-) 2: ";
+//     std::cin>>num2;
+//     switch (op)
+//     {
+//     case '+':res=num1+num2;std::cout<<res;break;
+//     case '-':res=num1-num2;std::cout<<res;break;
+//     case '/':res=num1/num2;std::cout<<res;break;
+//     case '*':res=num1*num2;std::cout<<res;break;
+//     case 'p':res=pow(num1,num2);std::cout<<res;break;
+//     case 'q':res=pow(num1,(1/num2));std::cout<<res;break;
+    
+//     default:std::cout<<"choose wight operation";
+//     }
+//     return 0;
+// }
+
+// ?->condation ? if true:else
+//&&:and ,||:or,!=:not eq
+// int main (){
+//     int num =90;
+//     int num2 =190;
+//     bool hun=false;
+//     num%2==1?std::cout<<"odd":std::cout<<"Even";
+//     hun?std::cout<<"hungry":std::cout<<"not hungry";//=
+//     std::cout<<(hun?"hungry":"not hungry");
+//     if(num==90&&num2==190){
+//         std::cout<<"ok";
+//     }else{std::cout<<"wronge";}
+//     if(num==90||num2==90){
+//         std::cout<<"ok2";
+//     }else{std::cout<<"wronge2";}
+//     if(num !=90 ){
+//         std::cout<<"ok3";
+//     }else{std::cout<<"wronge3";}
+//     return 0;
+// }
+//project temp change:
+// int main(){
+//     char unit;
+//     double temp;
+//     std::cout<<"choose rhe operarion (c f): ";
+//     std::cin>>unit;
+//     if(unit=='f'){
+//         std::cout<<"wright the temp in c: ";
+//         std::cin>>temp;
+//         std::cout<<(temp*1.8)+32;
+//     }
+//     if(unit=='c'){
+//         std::cout<<"wright the temp in f: ";
+//         std::cin>>temp;
+//         std::cout<<(temp-32)/1.8;
+//     }
+//     return 0;
+// }
+// methods
+// int main(){
+//     std::string name;
+//     std::cout<<"whats your name?: ";
+//     std::getline(std::cin,name);
+//     if (name.length()>=15){std::cout<<"must be less than 15 character";}
+//     else if (name.empty()){std::cout<<"must be wright the name";}//if the var not have the val
+//     else if (name=="clear"){name.clear();std::cout<<"Hello"<<name;}//clear the var
+//     else if (name=="append"){name.append("@gmail.com");std::cout<<"Hello "<<name;}//append val to the var
+//     else{std::cout<<"Hello "<<name;}
+//     return 0;
+// }
+//indexing  start from 0  //https://cplusplus.com/reference/string/  to more details
+// int main(){
+//     using std::cout;
+//     std::string name;
+//     std::string n1;
+//     std::string n2;
+//     std::string n4;
+//     int n3;
+//     name="mohamed tarek";
+//     n1=name.at(0);//find index num
+//     n2=name.insert(5,"@");// append caracter before index num
+//     n3=name.find("t");
+//     n4=name.erase(0,8);//print the index from .. to...
+//     cout <<n1<<'\n'<<n2<<'\n'<<n3<<'\n'<<n4<<'\n';
+//     return 0;
+// }
+
+//whileloop
+// int main(){
+//     std::string name;
+//     int num;
+//     while (name.empty())
+//     {
+//         std::cout<<"whats your name?: ";
+//         std::getline(std::cin,name);
+//         if (name.length()>=15){std::cout<<"must be less than 15 character";}
+//         else if (name=="clear"){name.clear();std::cout<<"Hello"<<name;}//clear the var
+//         else if (name=="append"){name.append("@gmail.com");std::cout<<"Hello "<<name;}//append val to the var
+//         else{std::cout<<"Hello "<<name;}
+//     }
+//     return 0;
+// } 
+
+// //do whileloop
+// int main(){
+//     std::string name;
+//     int num;
+//     do{
+//         std::cout<<"whats your name?: ";
+//         std::getline(std::cin,name);
+//         if (name.length()>=15){std::cout<<"must be less than 15 character";}
+//         else if (name=="clear"){name.clear();std::cout<<"Hello"<<name;}//clear the var
+//         else if (name=="append"){name.append("@gmail.com");std::cout<<"Hello "<<name;}//append val to the var
+//         else{std::cout<<"Hello "<<name;}
+//     } while (name.empty());
+//     do{
+//         std::cout<<"whats your num?: ";
+//         std::cin>>num;
+//         if (num>=15){std::cout<<num;}
+//     } while (num<0);
+    
+//     return 0;
+// } 
+// for loop
+// int main(){
+    // for (int i = 0; i <=5; i++)
+    // {
+    //     std::cout<<i<<'\n';
+    //     std::cout<<"hi"<<'\n';
+    // }
+    // for (int i = 10; i >=1; i--)
+    // {
+    //     std::cout<<i<<'\n';
+    // }
+//     for (int i = 0; i <=10; i+=2)
+//     {
+//         std::cout<<i<<'\n';
+//         if (i==2){continue;}
+//         if (i==6){break;}
+//     }
+//     for (int i = 10; i >=1; i-=2)
+//     {std::cout<<i<<'\n';}
+//     return 0;
+// }
+//insted loop
+// int main(){
+//     int col;
+//     int row;
+//     char sym;
+//     std::cout<<"wright number of colums";
+//     std::cin>>col;
+//     std::cout<<"wright number of rows";
+//     std::cin>>row;
+//     std::cout<<"wright the symbol";
+//     std::cin>>sym;
+//     for (int i =1;i<=row;i++){
+//         for(int j=1;j<=col;j++){
+//             std::cout<<sym;
+//         }
+//         std::cout<<'\n';
+//     }
+//     return 0;
+// }
+//randam
+#include<ctime>
+//simple random
+// int main(){
+//     srand(time(NULL));
+//     int num =rand();
+//     std::cout<<num<<'\n';
+//     int nu =(rand()%100)+1;
+//     std::cout<<(nu);
+//     return 0;
+// }
+// int main(){
+//     srand(time(0));
+//     int randn =(rand()%5)+1;
+//     switch (randn)
+//     {
+//         case 1:std::cout<<"1";break;
+//         case 2:std::cout<<"2";break;
+//         case 3:std::cout<<"3";break;
+//         case 4:std::cout<<"4";break;
+//         case 5:std::cout<<"4";break;
+//         case 6:std::cout<<"5";break;
+//         case 7:std::cout<<"6";break;
+//         case 8:std::cout<<"7";break;
+//         case 9:std::cout<<"8";break;
+    
+//     default:
+//         std::cout<<"out of rang";
+//         break;
+//     }
+//     return 0;
+// }
+// int main(){
+//     int nums7;
+//     int guess;
+//     int trys=5;
+//     srand(time(NULL));
+//     nums7 =(rand()%100)+1;
+//     std::cout<<"***********************start game*************************"<<'\n';
+//     do
+//     {
+//         std::cout<<"guess from 1 to 100: "<<'\n';
+//         std::cin>>guess;
+//         if (nums7>guess){std::cout<<"too small"<<'\n';trys-=1;}
+//         else if (nums7<guess){std::cout<<"too high"<<'\n';trys-=1;}
+//         else{std::cout<<"congrate"<<'\n'<<"*********************you win ***********************";break;}
+//     } while (trys!=0);
+//     if (trys==0){std::cout<<"try agin"<<'\n'<<"guess"<<nums7<<'\n'<<"*********************you lose ***********************";}
+//     return 0;
+// }
+//fun
+// void first(){
+//     std::cout<<"first funtion in c++"<<'\n';
+// }
+// int main(){
+//     std::string name="mohamed"
+//     first(name);
+//     return 0;
+// }
+
+// void first(std::string na);
+// int main(){
+//     std::string name="mohamed";
+//     first(name);
+//     return 0;
+// }
+// void first(std::string na){
+//     std::cout<<"first funtion in c++"<<'\n';
+//     std::cout<<"Hello "<<na;
+// }
+
+// void first(std::string na){
+//     std::cout<<"first funtion in c++"<<'\n';
+//     std::cout<<"Hello "<<na;}
+// int main(){
+//     std::string name="mohamed";
+//     first(name);
+//     return 0;}
+
+// void first(double na){
+//     std::cout<<pow(na,2);}
+// int main(){
+//     double n=5.5;
+//     first(n);
+//     return 0;}//=
+// double first(double na);
+// int main(){
+//     double n=6;
+//     first(n);
+//     return 0;}
+// double first(double na){std::cout<<pow(na,2);}
+
+// std::string first(std::string fn,std::string ln);
+// int main(){
+//     std::string f_name="mohamed";
+//     std::string l_name="tarek";
+//     std::string fn=first(f_name,l_name);
+//     std::cout<<"hello "<<fn;
+//     return 0;
+// }
+// std::string first(std::string fn,std::string ln){return fn+" "+ln;}
+//to make globle vars you must wright it out of main fun
+
+// int glo =1234;
+// void fun(){
+//     std::cout<<glo;
+// }
+// int main(){
+//     fun();
+// }
+// //to choose .0000 
+
+#include<iomanip>
+#include <getopt.h>
+#include <wchar.h>
+#include <io.h>
+// int main(){
+//     double f=11.23;
+//     std::cout<<std::setprecision(4)<<std::fixed<<f;}
+//banking project
+// double cash=00.00;
+// void show(){std::cout<<"your cash is: "<<std::setprecision(2)<<std::fixed<<cash<<'\n';}
+// void add(){
+//     double add;
+//     std::cout<<"wright the amount of money: "<<'\n';
+//     std::cin>>add;
+//     if (add>=0){cash+=add;std::cout<<"your cash is: "<<std::setprecision(2)<<std::fixed<<cash<<'\n';}
+// }
+// void take(){
+//     double take;
+//     std::cout<<"wright the amount of money: "<<'\n';
+//     std::cin>>take;
+//     if (take>=0 && take<=cash){cash-=take;std::cout<<"your cash is: "<<std::setprecision(2)<<std::fixed<<cash<<'\n';}
+//     else if (take<0){std::cout<<"your cannot do this operation\n";}
+//     else if (take>cash){std::cout<<"your dont have this cash \n";}
+// }
+// int main(){
+//     int cho;
+//     std::cout<<"********************start process******************* \n";
+//     do
+//     {
+//         std::cout<<"1 - show money: \n";
+//         std::cout<<"2 - add money: \n";
+//         std::cout<<"3 - take money: \n";
+//         std::cout<<"4 - exit: \n";
+//         std::cin>>cho;
+//         std::cin.clear();
+//         fflush(stdin);
+//         switch (cho)
+//         {
+//         case 1:
+//             show();break;
+//         case 2:
+//             add();break;
+//         case 3:
+//             take();break;
+//         case 4:
+//             std::cout<<"********************end process********************";break;
+        
+//         default:
+//             break;
+//         }
+//     } while (cho!=4 );
+//     return 0;
+// }
+
+//array
+// int main(){
+//     std::string names[]={"mohamed","man","mostafa"};
+//     double price[]={3.9,9.8,90.7,56,87,99};
+//     double deg[2];
+//     deg[0]=12;
+//     deg[1]=11.3;
+//     deg[2]=23.56;
+//     names[1]="meky";// change the val
+//     std::cout<<names<<'\n';//location of arr
+//     std::cout<<names[0]<<'\n';
+//     std::cout<<names[2]<<'\n';
+//     std::cout<<names[1]<<'\n';
+//     std::cout<<price<<'\n';
+//     std::cout<<price[1]<<'\n';
+//     std::cout<<price[3]<<'\n';
+//     std::cout<<price[4]<<'\n';
+//     std::cout<<price[5]<<'\n';
+//     std::cout<<deg[0]<<'\n';
+//     std::cout<<deg[2]<<'\n';
+//     return 0;
+// }
+
+//size and count of element
+// int main(){
+//     std::string name="mohamed";
+//     double gpa=2.5;
+//     char let[]={'A','B','C','D','E','F'};
+//     std::cout<<sizeof(gpa)<<"byets"<<'\n';
+//     std::cout<<sizeof(let)<<'\n';
+//     std::cout<<sizeof(name)<<'\n';
+//     std::cout<<sizeof(name)/sizeof(std::string)<<"element"<<'\n';
+//     std::cout<<sizeof(gpa)/sizeof(double)<<"element"<<'\n';
+//     std::cout<<sizeof(let)/sizeof(char)<<"element"<<'\n';
+//     return 0;}
+
+// int main(){
+//     std::string let[]={"mohamed","tarek","kareem","osama","mahdy","Faroq"};
+//     for (int i = 0; i <=3; i++){std::cout<<let[i]<<'\n';}
+//     std::cout<<"next\n";
+//     for (int i = 0; i <sizeof(let)/sizeof(std::string); i++){std::cout<<let[i]<<'\n';}//print all element
+//     return 0;}
+
+//each element loot
+// int main(){
+//     std::string let[]={"mohamed","tarek","kareem","osama","mahdy","Faroq"};
+//     for (std::string i:let){std::cout<<i<<'\n';}
+//     std::cout<<"next\n";
+//     //=
+//     for (int i = 0; i <sizeof(let)/sizeof(std::string); i++){std::cout<<let[i]<<'\n';}//print all element
+//     return 0;}
+
+// double gettotal(double let[],int s){
+//     double tot=0;
+//     for(int i =0;i<s;i++){tot+=let[i];}
+//     return tot;
+//     }
+// int main(){
+//     double let[]={23,56.7,86,46.76,35.8,86,99.98,45.88};
+//     double size=sizeof(let)/sizeof(let[0]);//sizeof(let[0]=sizeof(let[3]=sizeof(let[1])=sizeof(double) all is size of one element;
+//     double sizee=sizeof(let)/sizeof(double);
+//     double tot=gettotal(let,size);
+//     std::cout<<size<<'\n';
+//     std::cout<<sizee<<'\n';
+//     std::cout<<"$"<<tot<<'\n';
+//     return 0;}
+
+//begginer sort
+//sort(numbers.begin(), numbers.end());  :easy one 
+// void sort(int arr[] ,int size){
+//     int temp;
+//     for(int i=0;i<size;i++){
+//         for (int j=0;j<size-i-1;j++){
+//             if(arr[j]>arr[j+1]){
+//                 temp =arr[j];
+//                 arr[j]=arr[j+1];
+//                 arr[j+1]=temp;}}}}
+// int main(){
+//     int arr[]={10,1,3,2,6,2,4,7,5,8,9};
+//     int size= sizeof(arr)/sizeof(arr[0]);//size-1=index
+//     sort(arr,size);
+
+//     for(int i :arr){std::cout<<i<<" ";}
+//     return 0;
+// }
+
+//fill
+// int main(){
+//     int size= 10;
+//     std::string foods[5];
+//     int sizes= sizeof(foods)/sizeof(foods[0]);
+//     std::string fills[size];
+//     int arr[30];
+//     //fill(begin,end,value),use for str
+//     fill(fills+(size/2),fills+size,"does");
+//     fill(fills,fills+(size/2),"do");
+//     for(std::string i :fills){std::cout<<i<<'\n';}
+//     for(int i=0;i<sizes;i++){
+//         std::cout<<"what is your favorite food ? #"<<i+1<<":";
+//         std::getline(std::cin,foods[i]);
+//     }
+//     std::cout<<"your favo food"<<'\n';
+//     for(std::string i :foods){std::cout<<i<<',';}
+//     // for(std::string i :arr){std::cout<<i<<'\n';}
+//     return 0;
+// }
+
+//2d arr
+// int main(){
+//     std::string cars[][3]={
+//         {"F23","F56","F43"},
+//         {"F76","F23","F234"},
+//         {"F456","F3345","F456"}
+//     };
+//     int row =sizeof(cars)/sizeof(cars[0]);
+//     int colums =sizeof(cars[0])/sizeof(cars[0][0]);
+//     std::cout<<cars[0][0]<<'\n';
+//     std::cout<<cars[2][2]<<'\n';
+//     std::cout<<cars[1][0]<<'\n';
+//     std::cout<<cars[1][1]<<'\n';
+//     std::cout<<cars[1][0]<<'\n';
+//     std::cout<<cars[0][2]<<'\n';
+//     std::cout<<cars[2][1]<<'\n';
+//     std::cout<<cars[1][0]<<'\n';
+//     std::cout<<cars[2][1]<<'\n';
+//     std::cout<<cars[0][2]<<'\n';
+//     for(int i=0;i<row;i++){std::cout<<cars[i]<<'\n';}
+//     for(int i=0;i<row;i++){for(int j=0;j<colums;j++){std::cout<<cars[i][j]<<" ";}}
+//     std::cout<<'\n';
+//     return 0;
+// }
+
+// int main(){
+//     std::string ask[]={"what year c++ created?","who creat c++","what is predecessor of c++"};
+//     std::string ans[][4]={{"a.1969","B.1975","c.1985","d.1988"},{"a.Guido van rossum","b.mohamed","c.bjarne","d.jon snow"},{"a.c","b.c+","c.c++","d.python"}};
+//     int size=sizeof(ask)/sizeof(ask[0]);
+//     char guess;
+//     int score=0;
+//     char ak[]={'c','c','a'};
+//     for(int i=0;i<size;i++){
+//         std::cout<<"************************************\n";
+//         std::cout<<ask[i]<<"\n";
+//         std::cout<<"************************************\n";
+//         for(int j=0;j<(sizeof(ans[i])/sizeof(ans[i][0]));j++){
+//             std::cout<<ans[i][j]<<'\n';
+//         }
+//         std::cin>>guess;
+//         guess=tolower(guess);
+//         if(guess==ak[i]){score++;std::cout<<"correct\n";}
+//         else{std::cout<<"wrong";std::cout<<"the correct is :"<<ak[i]<<'\n';}
+//     }
+//     std::cout<<score<<'\n';
+//     return 0;
+// }
+
+//memory address
+// void swape(std::string &f,std::string &l){
+//     std::string temp=f;
+//     f=l;
+//     l=temp;}
+// int main(){
+//     std::string fname="mohamed";
+//     std::string lname="tarek";
+//     int age =21;
+//     bool student =true;
+//     std::cout<<fname<<'\n';
+//     std::cout<<lname<<'\n';
+//     std::cout<<&fname<<'\n';
+//     std::cout<<&lname<<'\n';
+//     swape(fname,lname);
+//     std::cout<<&fname<<'\n';
+//     std::cout<<&lname<<'\n';
+//     std::cout<<fname<<'\n';
+//     std::cout<<lname<<'\n';
+//     std::cout<<&age<<'\n';
+//     std::cout<<&student<<'\n';
+//     return 0;}
+
+//const parameters :itsmore secure
+// void con(const std::string &f,const int &a){
+//     a=0;
+//     f=" ";
+//     std::cout<<a<<'\n'<<f;}
+// int main(){
+//     std::string fname="mohamed";
+//     int age =21;
+//     con(fname,age);
+//     return 0;}
+
+//luhn algo
+// int getdigit(const int num);
+// int sumodddigit(const std::string cardnum);
+// int sumevendigit(const std::string cardnum);
+// int main(){
+//     std::string cardnum;
+//     int res=0;
+//     std::cout<<"Enter the num of card: ";
+//     std::cin>>cardnum;
+//     res=sumodddigit(cardnum)+sumevendigit(cardnum);
+//     if(res%10==0){std::cout<<cardnum<<"is valid";}else{std::cout<<cardnum<<" is not valid";}
+//     // std::cout<<cardnum.size(); : is len of fun 
+//     return 0;
+// }
+// int getdigit(const int num){
+//     return num%10+(num/10%10);
+// };
+// int sumodddigit(const std::string cardnum){
+//     int sum=0;
+//     for (int i=cardnum.size()-1;i>=0;i-=2){
+//         sum+=getdigit((cardnum[i]-'0'));
+//     }
+//     return sum;
+// };
+// int sumevendigit(const std::string cardnum){
+//     int sum=0;
+//     for (int i=cardnum.size()-2;i>=0;i-=2){
+//         sum+=getdigit((cardnum[i]-'0')*2);//'0'=48
+//     }
+//     return sum;
+// };
+// valid one:6011000990139424
+
+//pointer and null
+// int main(){
+//     std::string name="bro";
+//     std::string *Name=&name;
+//     int age=20;
+//     int *Age=&age;
+//     std::cout<<age<<'\n';
+//     std::cout<<*Age<<'\n';
+//     std::cout<<Age<<'\n';
+//     std::cout<<name<<'\n';
+//     std::cout<<Name<<'\n';
+//     std::cout<<*Name<<'\n';
+//     return 0;
+// }
+// int main(){
+//     int *pointer=nullptr;
+//     int x=12345;
+//     // pointer=&x;
+//     if(pointer==nullptr){std::cout<<"*Name"<<'\n';pointer=&x;}else{std::cout<<*pointer<<'\n';}
+//     return 0;
+// }
+
+//x o game
+// void drawboard(char *s);
+// void playermove(char*s,char p);
+// void compmove(char*s,char c);
+// bool checkwinner(char*s,char p,char c);
+// bool checktie(char*s);
+// int main(){
+//     char spaces[9]={' ',' ',' ',' ',' ',' ',' ',' ',' '};
+//     char  player='x';
+//     char  comp='o';
+//     bool running =true;
+//     drawboard(spaces);
+//     while (running){
+//         playermove(spaces , player);
+//         drawboard(spaces);
+//         if(checkwinner(spaces , player, comp)){running=false;break;}
+//         else if(checktie(spaces)){running=false;break;}
+//         //
+//         compmove(spaces , comp);
+//         drawboard(spaces);
+//         if(checkwinner(spaces , player , comp)){running=false;break;}
+//         else if(checktie(spaces)){running=false;break;}}
+//     return 0;
+//     }
+// void drawboard(char *s){
+//     std::cout<<"     |     |     "<<'\n';
+//     std::cout<<"   "<<s[0]<<" | "<<s[1]<<"   | "<<s[2]<<'\n';
+//     std::cout<<"_____|_____|_____"<<'\n';
+//     std::cout<<"     |     |     "<<'\n';
+//     std::cout<<"   "<<s[3]<<" | "<<s[4]<<"   | "<<s[5]<<'\n';
+//     std::cout<<"_____|_____|_____"<<'\n';
+//     std::cout<<"     |     |     "<<'\n';
+//     std::cout<<"   "<<s[6]<<" | "<<s[7]<<"   | "<<s[8]<<'\n';
+//     std::cout<<"_____|_____|_____"<<'\n';
+//     std::cout<<"     |     |     "<<'\n';
+//     std::cout<<"*************************************************"<<'\n';
+//     // return 0;
+// }
+// void playermove(char*s,char p){
+//     int num;
+//     do{
+//         std::cout<<"wright number of grid from 1 to 9: ";
+//         std::cin>>num;
+//         num--;
+//         if(s[num]==' '){s[num]=p;break;}
+//     }while(!num>0 |!num<8 );
+// }
+// #include<ctime>
+// void compmove(char*s,char c){
+//     srand(time(0));
+//     while(true){
+//         int n=rand() % 9;
+//         if(s[n]==' '){s[n]=c;break;}
+//     }
+// }
+// bool checkwinner(char*s,char p,char c){
+//     bool test =false;
+//     for(int i=0;i<9;i++){
+//         if(s[i]!=' '&&s[i]==s[i+1]&&s[i]==s[i+2]&&i<=6){test=true;break;}
+//         else if(s[i]!=' '&&s[i]==s[i+3]&&s[i]==s[i+6]&&i<=2){test=true;break;}
+//         else if(s[i]!=' '&&s[i]==s[i+4]&&s[i]==s[i+8]&&i==0){test=true;break;}
+//         else if(s[i]!=' '&&s[i]==s[i+2]&&s[i]==s[i+4]&&i==2){test=true;break;}
+//         else{return false;}}
+//     if (test=true){std::cout<<"you win \n";}else{std::cout<<"you lose \n";}
+// }
+// bool checktie(char*s){
+//     for(int i=0;i<9;i++){
+//         if(s[i]==' '){return false;}}
+//     std::cout<<"it is tei \n";
+//     return true;}
+//dynmic memory its is important when you dont know element in 
+// int main(){
+//     char *pgrade=NULL;
+//     int size;
+//     std::cout<<"how many grades to enter in?: ";
+//     std::cin>>size;
+//     pgrade= new char [size];
+//     for(int i=0;i<size;i++){
+//         std::cout<<"Entergrade #"<<i+1<<": ";
+//         std::cin>>pgrade[i];
+//     }
+//     for(int i=0;i<size;i++){std::cout<<"_"<<pgrade[i]<<"_";}
+//     delete[]pgrade;
+//     return 0;
+// }
+
+//recursion
+// void walk(int s){
+//     if (s>0){
+//         std::cout<<"its step number"<<s;
+//         walk(s-1);
+//     }
+// }
+// int main(){
+//     walk(100);
+//     return 0;
+// }
+// int factorial(int s){
+//     if (s>1){return factorial(s-1)*s;}else{return 1;}
+// }
+// int main(){
+//     int n;
+//     std::cout<<"the num: ";
+//     std::cin>>n;
+//     std::cout<<factorial(n);
+//     return 0;
+// }
+//not recursion
+// int main(){
+//     int n;
+//     std::cout<<"the num: ";
+//     std::cin>>n;
+//     int r=1;
+//     for (int i=1;i<=n;i++){
+//         r*=i;
+//         }
+//     std::cout<<r;
+//     return 0;
+// }
+
+
+//template fun
+// template <typename T,typename U>
+// auto max(T x,U y){return(x>y)?x:y;}
+// int main(){
+//     std::cout<<max(2,3.6);
+//     return 0;}
+
+// struct student{std::string name; double gpa;bool choose;};
+// void print(student s2){
+//     std::cout<<s2.name<<'\n';
+//     std::cout<<s2.gpa<<'\n';
+//     std::cout<<s2.choose<<'\n';
+// }
+// void print_r(student &s2,double g){
+//     s2.gpa=g;
+//     std::cout<<s2.name<<'\n';
+//     std::cout<<s2.gpa<<'\n';
+//     std::cout<<s2.choose<<'\n';
+// }
+// int main(){
+//     student s1;
+//     s1.name="mohamed";
+//     s1.gpa=3.8;
+//     s1.choose=true;
+//     std::cout<<s1.name<<'\n';
+//     std::cout<<s1.gpa<<'\n';
+//     std::cout<<s1.choose<<'\n';
+//     student s2;
+//     s2.name="islam";
+//     s2.gpa=3.6;
+//     s2.choose=false;
+//     print(s2);
+//     print_r(s2,4.7);
+//     return 0;}
+
+//ENUM
+// enum Day{sunday=0,monday=1,tesday=2,wednesday=3,thursday=4,friday=5,satrday=6};
+// int main(){
+//     // Day today =friday;
+//     Day today =tesday;
+//     switch (today)
+//     {
+//     case friday:std::cout<<"hi";break;
+//     case 2:std::cout<<"hello";break;
+//     }
+// }
+
+//oop
+// class Human{
+//     public:
+//         std::string name;
+//         int age;
+//         std::string occupation;
+//         bool x=true;
+//         void eat(){std::cout<<"this person is eating\n";}
+//         void drink(){std::cout<<"this person is drink\n";}
+//         void sleep(){std::cout<<"this person is sleep\n";}
+// };
+// int main(){
+//     Human h1;
+//     h1.name ="rick";
+//     h1.occupation="scientist";
+//     h1.age=34;
+//     std::cout<<h1.name<<'\n';
+//     std::cout<<h1.occupation<<'\n';
+//     std::cout<<h1.age<<'\n';
+//     h1.eat();
+//     h1.drink();
+//     h1.sleep();
+//     Human h2;
+//     h2.name ="mohMED";
+//     h2.occupation="ENG";
+//     h2.age=19;
+//     std::cout<<h2.name<<'\n';
+//     std::cout<<h2.occupation<<'\n';
+//     std::cout<<h2.age<<'\n';
+//     std::cout<<h2.x<<'\n';
+//     h2.eat();
+//     h2.drink();
+//     h2.sleep();
+//     return 0;
+// }
+//constructor
+// class student{
+//     public:
+//         std::string name; double gpa;bool choose;
+//         student(std::string name,double gpa,bool z){
+//             this->name=name;//this if have sMAE name
+//             this->gpa=gpa;
+//             choose=z;
+//         }
+// };
+// int main(){
+//     student s1("mo",24,3.3);
+//     student s2("ta",35,3.2);
+//     student s3("rema",15,3.7);
+//     std::cout<<s1.name<<'\n';
+//     std::cout<<s1.gpa<<'\n';
+//     std::cout<<s1.choose<<'\n';
+// }
+//الفرق بين انك تستخدم فنكشن هو طريقه اضافه المعلومات
+
+// class pizza{
+//     public:
+//         std::string toping1;
+//         std::string toping2;
+//         pizza(std::string toping){
+//             toping1=toping1;//this if have sMAE name
+//         }
+//         pizza(std::string toping1,std::string toping2){
+//             toping1=toping1;//this if have sMAE name
+//             toping2=toping2;//this if have sMAE name
+//         }
+//         pizza(){}
+// };
+// int main(){
+//     pizza p1("mo");
+//     pizza p2("ta","do");
+//     pizza p3;
+//     std::cout<<p1.toping1<<'\n';
+//     std::cout<<p2.toping2<<'\n';
+//     // std::cout<<p3<<'\n';
+// }
+//getter(readable)  setter(wightable)
+
+// class stove{
+//     private://will not return
+//         int temp=0;
+//     public:
+//         int gettemp(){
+//             return temp;}
+//             void settemp(int temp){
+//                 if (temp<0){this->temp=0;}
+//                 else if (temp>=100){this->temp=100;}
+//                 else{this->temp=temp;}
+//             }
+// };
+// int main(){
+//     stove v;
+//     // v.temp=10000;
+//     v.settemp(-10000);
+//     std::cout<<v.gettemp();
+// }
+
+//inheritance
+// class animal{
+//     public:
+//         bool alive=true;
+//         void eat(){std::cout<<"eat\n";}
+// };
+// class dog:public animal{
+//     public:
+//         void bark(){std::cout<<"woof";}
+// };
+// class cat:public animal{
+//     public:
+//         void meao(){std::cout<<"meaw";}
+// };
+// int main(){
+//     dog d;
+//     cat c;
+//     std::cout <<d.alive<<'\n';
+//     d.eat();
+//     d.bark();
+//     std::cout <<c.alive<<'\n';
+//     c.eat();
+//     c.meao();
+// }
+// class shap{
+//     public:
+//         double area;
+//         double volume;
+// };
+// class cube:public shap{
+//     public:
+//         double side;
+//         cube(double side){
+//             this->side=side;
+//             this->area=side*side*6;
+//             this->volume=side*side*side;
+//         }
+// };
+// class sphere:public shap{
+//     public:
+//         double r;
+//         sphere(double r){
+//             this->r=r;
+//             this->area=4*3.14*r*r;
+//             this->volume=r*r*r*3.14*(4/3.0);
+//         }
+// };
+// int main(){
+//     cube cube(10);
+//     sphere sphere(5);
+//     std::cout<<"cube area: "<<cube.area<<'\n';
+//     std::cout<<"cube volume: "<<cube.volume<<'\n';
+//     std::cout<<"sphere area: "<<sphere.area<<'\n';
+//     std::cout<<"sphere volume: "<<sphere.volume<<'\n';
+// }
+the vector<"type">:like List in python to more info :https://www.geeksforgeeks.org/vector-in-cpp-stl/
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,299 @@
+there are two types of data structure:
+primitive :int float character pointers ;
+non primitive :
+linear data:Arrays Linked List Stack Queue
+non linear: Trees graphs
+Complexity(Time,Space)
+Time complexity :bestcase ,average case ,worst cae O
+hint:loop =O(n)
+for (int i;i<size/2;i++)O(log n)
+fun cout it with all steps
+stack:last in first out (LIFO) 
+array:
+#include <iostream>
+using namespace std;
+const int MAX_SIZE=100;
+class stacks{
+    int top;
+    int item[MAX_SIZE];
+public:
+    stacks():top(-1){}
+    void puch(int elemant){
+        if(top>=MAX_SIZE-1){std::cout<<"stack full";}
+        top++;
+        item[top]=elemant;
+    }
+    bool isemp(){if(top==-1){return true;}else{return false;}}
+    void pop(){
+        if(isemp()){std::cout<<"stack is empty";}
+        else{top--;}
+    }
+    void savepop(int&e){
+        if(isemp()){std::cout<<"stack is empty";}
+        else{
+        e=item[top];
+        cout<<'\n'<<e<<'\n';
+        top--;
+        }
+    }
+    void gettop(int&e){
+        if(isemp()){std::cout<<"stack is empty";}
+        else{
+        e=item[top];
+        cout<<e;
+        }
+    }
+    void print(){
+        cout<<"[";
+        for(int i=top;i>=0;i--){std::cout<<item[i]<<"";}
+        cout<<"]"<<"\n";
+    }
+    };
+    int main(){
+        stacks s;
+        s.puch(5);
+        s.puch(15);
+        s.puch(25);
+        s.puch(35);
+        s.pop();
+        int y=0;
+        s.gettop(y);
+        s.puch(7);
+        s.print();
+    }
+listed:
+template<class t>
+class stack{
+    struct Node{
+        t item;
+        Node*next;
+        // newNode->next=stackTop;
+        // stackTop=newNode;
+    };
+    Node*top,*cur;
+public:
+    stack(){top=NULL;
+    }
+    void puch(t newitem){
+        Node*newitemptr=new Node;
+        newitemptr->item=newitem;
+        newitemptr->next=top;
+        top=newitemptr;
+    }
+    bool emp(){return top==NULL;}
+    void pop(){
+        // if(emp){cout<<"error";}
+        // else{
+            // stacktop=top->item;
+            Node*temp=top;
+            top=top->next;
+            temp=temp->next=NULL;
+            delete temp;}
+    void gettop(t&stacktop){
+        if(emp){cout<<"error";}
+        else{
+            stacktop=top->item;}}
+    void print(){
+        cur=top;
+        cout<<"[";
+        while(cur!=NULL){
+            cout<<cur->item;
+            cout<<",";
+            cur=cur->next;
+        }
+        cout<<"]";
+    }
+    };
+int main(){
+    stack<int>s;
+    s.puch(100);
+    s.puch(10);
+    s.puch(50);
+    // s.print();
+    s.pop();
+    s.print();
+    // s.gettop(0);
+    // s.print();
+}
+#:
+#include <iostream>
+using namespace std;
+#include <stack>
+bool arep(char open,char close){
+    if(open=='('&&close==')'){return true;}
+    else if(open=='{'&&close=='}'){return true;}
+    else if(open=='['&&close==']'){return true;}
+    return false;
+}
+bool balance(string exp){
+    stack<char> s;
+    for (int i = 0; i< exp.length(); i++)
+    {
+        if(exp[i]=='('||exp[i]=='{'||exp[i]=='['){
+            s.push(exp[i]);}
+        else if (exp[i]==')'||exp[i]=='}'||exp[i]==']'){
+            if(s.empty()|| !arep(s.top(),exp[i])){
+                return false;}
+            else{s.pop();}
+    }
+    }
+    return s.empty()?true:false;
+}
+int main(){
+    string expession;
+    cout<< "wright the eq: ";
+    cin>>expession;
+    if(balance(expession)){cout<<"Balance";}
+    else{cout<<"not Balance";}
+}
+
+combilar dealing with math in stack:
+puch number:
+infix:2*4-2
+postfix2 4 * 2 -
+-------
+infix:5/5+2-1*9
+postfix: 5 5/ 2 + 1 9 * -
+prefix:- + / 5 5 2 * 1 9
+or puch oberator
+infix:2*4-2
+postfix:2 4 * 2 -
+infix:8/2+7-4*2
+postfix:8 2/7+4 2*-
+ infix:2((8+2*3)/2)-1
+postfix:2 8 2 *+ 2/ +1-
+ الفرق ان الاولي بنضيف الارقام لحد ظهور + -* /
+اما التانيه هو اضافه العلامات و ح\فها من الاستاك حسب الاولويه
+#read more for more information
+
+#Queue Data Structure first in first out(FIFO)
+template<class t>
+class arrQT{
+    int front;
+    int rear;
+    int leanth;
+    int MAX_LENGTH;
+    // int arr[MAX_LENGTH];
+    t *arr;
+public:
+    arrQT(int size){
+        if (size>0)MAX_LENGTH=size;else{MAX_LENGTH=100;}
+        front=0;
+        arr=new t[MAX_LENGTH];
+        rear=MAX_LENGTH-1;
+        leanth=0;
+    }
+    bool isemp(){return leanth ==0 ;}
+    int isfull(){return leanth ==MAX_LENGTH ;}    
+    void addQ(t e){
+        if(isfull()){cout<<"Queue Full Cant Enqueue";}
+        else{
+            rear=(rear+1)%MAX_LENGTH;
+            arr[rear]=e;
+            leanth++;
+            }}
+    void delQ(){
+        if(isemp()==true){cout<<"Queue is  empty  so Cant delete from queue";}
+        else{
+            front=(front+1)%MAX_LENGTH;
+            leanth-=1;}}
+    int frontQ(){
+        assert(isemp()) ;
+        return arr[front];}
+    int rearQ(){
+        assert(!isemp()) ;
+        return arr[rear];}
+    void get_front(int&g){g=arr[front];}
+    int serchq(int e){
+        int pos=-1;
+        if(!isemp()){
+            for (int i = front; i != rear; i=((i+1)%MAX_LENGTH))
+                if(arr[i]=e)
+                {
+                    pos=i;
+                    break;
+                }
+                // if(pos=-1){
+                //     if(arr[rear]=e){pos=rear;}
+                // }
+        }
+        else{cout<<"Q is emp"<<'\n';}
+        return pos;
+    }
+    void print(){
+        for (size_t i = front; i !=rear+1; i=((i+1)%MAX_LENGTH))
+        {
+            cout<<arr[i]<<" ";
+        }
+        // cout<<Arr[rear];
+        
+    }
+    };
+int main(){
+    arrQT<int>q1(50);
+    q1.addQ(10);
+    q1.addQ(20);
+    q1.addQ(30);
+    q1.addQ(40);
+    q1.addQ(50);
+    q1.delQ();
+    // cout<<q1.serchq(30);
+    q1.addQ(80);
+    q1.addQ(70);
+    q1.delQ();
+    // q1.print();
+    // cout<<q1.serchq(50);
+    cout<<q1.frontQ();
+    cout<<q1.rearQ();
+}
+
+queue(linked list):https://github.com/Adel-Nasim/Data-Structures/blob/master/Linked%20Queue.txt
+
+array based list,linked list:back th the vs code file
+tree:
+      /-----\
+     /       \
+left---      ---right
+Binary tree traversal:
+pre-order traversal->root left right
+in-order traversal->left root right
+post-order traversal->left right root
+level order
+Binary Search Tree:
+best case:O(log2 n),worse case:O(n)
+successor->search too long to discuse
+predecessor
+#https://github.com/Adel-Nasim/Data-Structures/blob/master/Binary%20Search%20Tree.txt
+types:
+-full binary tree:all node have 2 or 0 child
+-complete:all level is complete exipt last level as full but all node have 2 child exipt last line and if it hAVE 1 child in last node must be in the left 
+-perfect binary tree when all node have 2 child and all leaves at same level
+balanced binary tree:
+when the height of tree =O(log2n).|h(left)-h(reight)|<=1
+Adegenerate tree:all node only have one child
+to max number if node in any level=2^L,L:number of level
+ to max number if node in the tree:(2^(h+1))-1,h=log2(n+1)-1
+Data Compression (by david huffman):to compress the text by reduce the bits by rerecognize it with sanding the table --read more
+to calc time complexity:https://www.timecomplexity.ai/?id=d7c0e8a2-4032-431b-9421-040691cdbee8
+//sort:
+selection sort:+:simple,in-place algo,not extra space,-:TC=O(n^2)
+bubble sort:+:better in time,-:O(n^2)
+insertion sort:O(n^2)
+merge sort:O(nlog n),extra space
+quick sorting:O(nlog2n),not extra space
+heap:complete binary tree->max heap:the child is bigger than parent-min heap:the child is smallerthan parent
+heap sort:O(nlog n)
+//search
+linear search
+Binary Search
+graph:
+directed grap:its only one relation betwen toe element
+undirected grap:its more than one relation betwen toe element
+ext....
+trhere are many methods:
+1-BFS spanning Tree->read more or back to video in Adel Nasim chanal
+2-DFS(Depth-First Search)->read more or back to video in Adel Nasim chanal00
+3-shortest path->Dijkstra(Greedy Algorithm)
+4-Bellman-Fold Alorithm
+
+

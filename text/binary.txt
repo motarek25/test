@@ -1,0 +1,18 @@
+p=0
+s=[]
+while True:
+   if pow(2,p)>n:p-=1; break
+   p+=1
+print(p)
+while p>=0:
+    # n-=pow(2,p)
+    # s.append(1)
+    if n-pow(2,p)<0:s.append(0)
+    else:
+       s.append(1)
+       n-=pow(2,p)
+    if p==0:break
+    p-=1
+res=""
+for i in s:res+=f"{i}"
+print(res)

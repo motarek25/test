@@ -1,0 +1,1518 @@
+#include <iostream>
+#include<cassert>
+#include <stack>
+using namespace std;
+// const int MAX_SIZE=100;
+// class stacks{
+//     int top;
+//     int item[MAX_SIZE];
+// public:
+//     stacks():top(-1){}
+//     void puch(int elemant){
+//         if(top>=MAX_SIZE-1){std::cout<<"stack full";}
+//         top++;
+//         item[top]=elemant;
+//     }
+//     bool isemp(){if(top==-1){return true;}else{return false;}}
+//     void pop(){
+//         if(isemp()){std::cout<<"stack is empty";}
+//         else{top--;}
+//     }
+//     void savepop(int&e){
+//         if(isemp()){std::cout<<"stack is empty";}
+//         else{
+//         e=item[top];
+//         cout<<'\n'<<e<<'\n';
+//         top--;
+//         }
+//     }
+//     void gettop(int&e){
+//         if(isemp()){std::cout<<"stack is empty";}
+//         else{
+//         e=item[top];
+//         cout<<e;
+//         }
+//     }
+//     void print(){
+//         cout<<"[";
+//         for(int i=top;i>=0;i--){std::cout<<item[i]<<"";}
+//         cout<<"]"<<"\n";
+//     }
+//     };
+//     int main(){
+//         stacks s;
+//         s.puch(5);
+//         s.puch(15);
+//         s.puch(25);
+//         s.puch(35);
+//         s.pop();
+//         int y=0;
+//         s.gettop(y);
+//         s.puch(7);
+//         s.print();
+//     }
+// template<class t>
+// class stack{
+//     struct Node{
+//         t item;
+//         Node*next;
+//         // newNode->next=stackTop;
+//         // stackTop=newNode;
+//     };
+//     Node*top,*cur;
+// public:
+//     stack(){top=NULL;
+//     }
+//     void puch(t newitem){
+//         Node*newitemptr=new Node;
+//         newitemptr->item=newitem;
+//         newitemptr->next=top;
+//         top=newitemptr;
+//     }
+//     bool emp(){return top==NULL;}
+//     void pop(){
+//         // if(emp){cout<<"error";}
+//         // else{
+//             // stacktop=top->item;
+//             Node*temp=top;
+//             top=top->next;
+//             temp=temp->next=NULL;
+//             delete temp;}
+//     void gettop(t&stacktop){
+//         if(emp){cout<<"error";}
+//         else{
+//             stacktop=top->item;}}
+//     void print(){
+//         cur=top;
+//         cout<<"[";
+//         while(cur!=NULL){
+//             cout<<cur->item;
+//             cout<<",";
+//             cur=cur->next;
+//         }
+//         cout<<"]";
+//     }
+//     };
+// int main(){
+//     stack<int>s;
+//     s.puch(100);
+//     s.puch(10);
+//     s.puch(50);
+//     // s.print();
+//     s.pop();
+//     s.print();
+//     // s.gettop(0);
+//     // s.print();
+// }
+// bool arep(char open,char close){
+//     if(open=='('&&close==')'){return true;}
+//     else if(open=='{'&&close=='}'){return true;}
+//     else if(open=='['&&close==']'){return true;}
+//     return false;
+// }
+// bool balance(string exp){
+//     stack<char> s;
+//     for (int i = 0; i< exp.length(); i++)
+//     {
+//         if(exp[i]=='('||exp[i]=='{'||'['){
+//             s.push(exp[i]);}
+//         else if (exp[i]==')'||exp[i]=='}'||exp[i]==']'){
+//             if(s.empty()|| !arep(s.top(),exp[i])){
+//                 return false;}
+//             else{s.pop();}
+//     }
+//     }
+//     return s.empty()?true:false;
+// }
+// int main(){
+//     string expession;
+//     cout<< "wright the eq: ";
+//     cin>>expession;
+//     if(balance(expession)){cout<<"Balance";}
+//     else{cout<<"not Balance";}
+// }
+// const int MAX_LENGTH=100000000;
+// template<class t>
+// class arrQT{
+//     int front;
+//     int rear;
+//     int leanth;
+//     int MAX_LENGTH;
+//     // int arr[MAX_LENGTH];
+//     t *arr;
+// public:
+//     arrQT(int size){
+//         if (size>0)MAX_LENGTH=size;else{MAX_LENGTH=100;}
+//         front=0;
+//         arr=new t[MAX_LENGTH];
+//         rear=MAX_LENGTH-1;
+//         leanth=0;
+//     }
+//     bool isemp(){return leanth ==0 ;}
+//     int isfull(){return leanth ==MAX_LENGTH ;}    
+//     void addQ(t e){
+//         if(isfull()){cout<<"Queue Full Cant Enqueue";}
+//         else{
+//             rear=(rear+1)%MAX_LENGTH;
+//             arr[rear]=e;
+//             leanth++;
+//             }}
+//     void delQ(){
+//         if(isemp()==true){cout<<"Queue is  empty  so Cant delete from queue";}
+//         else{
+//             front=(front+1)%MAX_LENGTH;
+//             leanth-=1;}}
+//     int frontQ(){
+//         assert(isemp()) ;
+//         return arr[front];}
+//     int rearQ(){
+//         assert(!isemp()) ;
+//         return arr[rear];}
+//     void get_front(int&g){g=arr[front];}
+//     int serchq(int e){
+//         int pos=-1;
+//         if(!isemp()){
+//             for (int i = front; i != rear; i=((i+1)%MAX_LENGTH))
+//                 if(arr[i]=e)
+//                 {
+//                     pos=i;
+//                     break;
+//                 }
+//                 // if(pos=-1){
+//                 //     if(arr[rear]=e){pos=rear;}
+//                 // }
+//         }
+//         else{cout<<"Q is emp"<<'\n';}
+//         return pos;
+//     }
+//     void print(){
+//         for (size_t i = front; i !=rear+1; i=((i+1)%MAX_LENGTH))
+//         {
+//             cout<<arr[i]<<" ";
+//         }
+//         // cout<<Arr[rear];
+        
+//     }
+//     };
+// int main(){
+//     arrQT<int>q1(50);
+//     q1.addQ(10);
+//     q1.addQ(20);
+//     q1.addQ(30);
+//     q1.addQ(40);
+//     q1.addQ(50);
+//     q1.delQ();
+//     // cout<<q1.serchq(30);
+//     q1.addQ(80);
+//     q1.addQ(70);
+//     q1.delQ();
+//     // q1.print();
+//     // cout<<q1.serchq(50);
+//     cout<<q1.frontQ();
+//     cout<<q1.rearQ();
+// }
+
+
+// class linkQ{
+// private:
+//     struct Node{
+//         int item;
+//         Node*next;
+//     };
+//     int front;
+//     int rear;
+//     int leanth;
+// public:
+//     linkQ(){
+//         front=rear=NULL;
+//         leanth=0;}
+//     bool isemp(){returnrear==NULL;}
+//     void enQ(int e){
+//         if(isemp()){
+//             front=new Node;
+//             fornt->item=e;
+//             front->next=NULL;
+//             rear=font
+//             leanth++;
+//         }
+//         else{
+//             Node*nweptr=new Node;
+//             nweptr->item=e;
+//             nweptr->next=NULL
+//             rear->next=nweptr;
+//             rear=nweptr;
+//             leanth++;
+//         }
+//     }
+
+//     void delQ(int e){
+//         if(isemp()){cout<<"its empty";
+//             front=new Node;
+//             fornt->item=e;
+//             front->next=NULL;
+//             rear=font
+//             leanth++;
+//         }
+//         else{
+//             Node*temp=front;
+//             if(front==rear){
+//                 front=NULL;
+//                 rear=NULL;
+//                 leanth--;
+//             }
+//             else{front=front->next;temp->next=NULL;leanth--;}
+//             delete temp;
+//         }
+//     }
+//     int getfront(){
+//         assert(!isemp());
+//         return front->item;
+//     }
+//     int getrear(){
+//         assert(!isemp());
+//         return rear->item;
+//     }
+//     void print(){
+//         Node*cur=front;
+//         cout<<"items in the queue:[";
+//         while (cur!=NULL){
+//             cout<<cur->item<<" ";
+//             cur=cur->next;
+//             }cout<<"]\n"
+//     }
+//     void clear(){
+//         Node*cur;Node*cur;
+//         while(front!=NULL){
+//             cur=front;
+//             front=front->next;
+//             delete cur;
+//         }
+//         rear=NULL;
+//         leanth=0;
+//     }
+//     int size(){return leanth;}
+// };
+// int main(){
+//     linkQ<int> k1;
+//     k1.enQ(10);
+//     k1.enQ(20);
+//     k1.enQ(30);
+//     k1.enQ(40);
+//     cout<<k1.size();
+//     k1.print();
+// }
+
+// #include <iostream>
+// #include <cassert>
+// using namespace std;
+// template<class t>
+// class linkedQueue
+// {
+// private:
+// 	struct Node
+// 	{
+// 		t item;
+// 		Node *next;
+// 	};
+// 	int length;
+// 	Node *frontPtr, *rearPtr;
+
+// public:
+	
+// linkedQueue():frontPtr(NULL), rearPtr(NULL), length(0)
+// 	{}
+// 	bool isEmpty()
+// 	{
+// 		return (length == 0);
+// 	}
+
+// 	void dequeue()
+// 	{
+// 		if (isEmpty())
+// 			cout << "Empty Queue" << endl;
+// 		else if (length == 1)
+// 		{
+// 			delete frontPtr;
+// 			rearPtr = NULL;
+// 			length = 0;
+// 		}
+// 		else
+// 		{
+// 			Node *current = frontPtr;
+// 			frontPtr = frontPtr->next;
+// 			delete current;//free(current)
+// 			length--;
+// 		}
+// 	}
+
+// 	void enqueue(t item)
+// 	{
+// 		Node *newNode = new Node;
+// 		newNode->item = item;
+// 		newNode->next = NULL;
+
+// 		if (length == 0)
+// 			rearPtr = frontPtr = newNode;
+// 		else
+// 		{
+// 			rearPtr->next = newNode;
+// 			rearPtr = newNode;
+// 		}
+// 		length++;
+// 	}
+
+// 	t front()
+// 	{
+// 		assert(!isEmpty());
+// 		return frontPtr->item;
+// 	}
+
+// 	t rear()
+// 	{
+// 		assert(!isEmpty());
+// 		return rearPtr->item;
+// 	}
+
+// 	void clearQueue()
+// 	{
+// 		Node *current;
+
+// 		while (frontPtr != NULL)
+// 		{
+// 			current = frontPtr;
+// 			frontPtr = frontPtr->next;
+// 			delete current;
+// 		}
+// 		rearPtr = NULL;
+// 		length = 0;
+// 	}
+// 	void display()
+// 	{
+// 		Node*cur = frontPtr;
+// 		cout << "Item in the queue :[ ";
+// 		while (cur!=NULL)
+// 		{
+// 			cout << cur->item<<" ";
+// 			cur = cur->next;
+// 		}cout << "]" << endl;
+// 	}
+
+// 	void search(t item)
+// 	{
+// 		Node*cur = frontPtr;
+// 		bool flag = true;
+// 		while (cur != NULL)
+// 		{
+// 			if (cur->item == item)
+// 			{
+// 				cout << "the item :" << item << " found" << endl;
+// 				flag = false;
+// 				break;
+// 			}
+// 			cur = cur->next;
+// 		}
+// 		if(flag)
+// 			cout << "the item : " << item << " not found" << endl;
+
+// 	}
+
+// };
+
+// int main()
+// {
+// 	linkedQueue<int>q1;
+
+// 	for (int i = 1; i <= 20; i++)
+// 		q1.enqueue(i);
+
+// 	cout << q1.front() << endl;
+// 	cout << q1.rear() << endl;
+// 	q1.display();
+// 	return 0;
+// }
+
+
+// class arrlist{
+//     int*arr;
+//     int maxsize;
+//     int len;
+// public:
+//     arrlist(int s){
+//         if(s<=0){maxsize=100;}else{maxsize=s;}
+//         len=0;
+//         arr=new int[maxsize];
+//     }
+//     bool isemp(){return len==0;}
+//     bool isfull(){return len==maxsize;}
+//     int getsize(){return len;}
+//     void pirnt(){
+//         for(int i=0;i<len;i++){
+//             cout<<arr[i]<<" "<<'\n';
+//         }
+//     }
+//     int search(int e){
+//         for(int i =0;i<len;i++){
+//             if(arr[i]==e) return i;
+//         return-1;
+//         }}
+// void insertAt(int loc, int item){
+// 	if(isfull())
+// 		cout<<" The List is Full " << endl;
+// 	else if(loc < 0 || loc > len)
+// 		cout << "Out of Range " << endl;
+// 	else
+// 	{
+// 		for(int i = len; i > loc; i--)
+// 			arr[i] = arr[i - 1];	//shift right
+		
+// 		arr[loc] = item;	//insert the item at the specified position
+// 		len++;	//increment the len
+// 	}
+// }
+// void insertEnd(int item)
+// {
+// 	if(isfull())
+// 		cout<<" The List is Full " << endl;
+// 	else
+// 		arr[len++] = item;
+// }
+//     void insertnotdupl(int e){
+//         if(search(e)==-1){insertEnd(e);}else{cout<<"the elemant there..!";}
+//     }
+//     void updat(int pos,int e){
+//         if(pos<0||pos>=len){cout<<"out of the range";}else{arr[pos]=e;}
+//     }
+//     int getelement(int pos){
+//         if(pos<0||pos>=len){cout<<"out of the range";}else{return arr[pos];}}
+// void replaceAt(int loc, int item){
+// 	if(loc < 0 || loc >= len)
+// 		cout << "Out of Range " << endl;
+// 	else {arr[loc] = item;}}
+// void clearList(){len = 0;}
+
+// void remove(int item){
+// 	int loc = search(item);
+// 	if(loc == -1)
+// 		cout<<"The item to be deleted is not in the list" << endl;
+// 	else
+// 		removeAt(loc);
+// }
+
+// void removeAt(int loc){
+// 	if(loc < 0 || loc >= len)
+//         cout<<"The location of the item to be removed is out of range."<<endl;
+// 	else
+// 	{
+//         for(int i = loc; i < len - 1; i++)
+//             arr[i] = arr[i+1];
+// 		len--;}
+//     }
+
+//     ~arrlist(){
+//         delete[]arr;
+//     }
+// };
+// int main(){
+//     arrlist ar(100);
+//     ar.insertAt(0,10);
+//     ar.insertAt(1,50);
+//     ar.insertAt(2,33);
+//     ar.insertAt(3,53);
+//     ar.replaceAt(2,44);
+//     ar.insertEnd(37);
+//     ar.removeAt(-1);
+//     ar.remove(10);
+//     ar.updat(2,60);
+//     ar.insertnotdupl(50);
+//     // cout<<ar.getsize()<<'\n';
+//     ar.pirnt();
+//     // ar.clearList();
+//     }
+
+// class linklist{
+//     struct Node{
+//         int item;
+//         Node*next;
+//     };
+//     Node*first;
+//     Node*last;
+//     int lenght;
+// public:
+//     linklist(){
+//         first=last=NULL;
+//         lenght=0;
+//     }
+//     bool isemp(){return lenght==0;}
+//     void insertfirst(int e){
+//         Node*newnode=new Node;
+//         newnode->item=e;
+//         if(lenght==0){first=last=newnode;newnode->next=NULL;}else{newnode->next=first;first=newnode;}
+//         lenght++;
+//     }
+//     void insertlast(int e){
+//         Node*newnode=new Node;
+//         newnode->item=e;
+//         if(lenght==0){first=last=newnode;newnode->next=NULL;}else{last->next=newnode;newnode->next=NULL;last=newnode;}
+//         lenght++;
+//     }
+//     void insertatpos(int pos,int e){
+//         if(pos<0||pos>lenght){cout<<"out of range";}
+//         else{
+//             Node*newnode=new Node;
+//             newnode->item=e;
+//             if(pos==0){insertfirst(e);}
+//             else if(pos==lenght){insertlast(e);}
+//             else{
+//                 Node*cur=first;
+//                 for(int i=1;i<pos;i++){
+//                     cur=cur->next;
+//                 }
+//                 newnode->next=cur->next;
+//                 cur->next=newnode;
+//                 lenght++;
+//                 }
+//         }
+//     }
+//     void removefirst(){
+//         // cout<<lenght;
+//         if(lenght==0){return ;}
+//         else if(lenght==1){delete first;last=first=NULL;lenght-=1;}
+//         else{
+//             Node*curr=first;
+//             first=first->next;
+//             delete curr;
+//             lenght--;}
+//     }
+//     void removelast(){
+//         Node*curr=first->next;
+//         Node*pre=first;
+//         if(lenght==0){return;}
+//         else if(lenght==1){delete first;last=first=NULL;lenght-=1;}
+//         else{
+//             while (curr!=last){pre=curr;curr=curr->next;}
+//             delete curr;
+//             pre->next=NULL;
+//             last=pre;
+//             lenght-=1;
+//         }
+//     }
+//     void remove(int e){
+//         if(isemp())return;
+//         Node*curr;
+//         Node*pre;
+//         if(first->item==e){removefirst();}
+//         else{
+//             curr=first->next;pre=first;
+//             while (curr!=NULL){
+//                 if(curr->item==e)break;
+//                 pre=curr;curr=curr->next;}
+//             if(curr==NULL){cout<<"not founded";}
+//             else{
+//                 pre->next=curr->next;
+//                 if(last==curr){last=pre;}
+//                 delete curr;
+//                 lenght--;
+//             }
+//         }
+//     }
+//     void removepos(int pos){
+//         if(pos<0||pos>lenght){cout<<"out of range";}
+//         if(isemp())return;
+//         Node*curr;
+//         Node*pre;
+//         curr=first->next;pre=first;
+//         for(int i=1;i<pos;i++){pre=curr;curr=curr->next;}
+//         if(pos==0){removefirst();}
+//         else if(pos==lenght-1){removelast();}
+//         else{
+//                 pre->next=curr->next;
+//                 if(last==curr){last=pre;}
+//                 delete curr;
+//                 lenght--;
+//         }
+//     }
+//     void reverse(){
+//         Node*prev,*next,*curr;
+//         prev=NULL;
+//         curr=first;
+//         next=curr->next;
+//         while(next!=NULL){
+//             next=curr->next;
+//             curr->next=prev;
+//             prev=curr;
+//             curr=next;}
+//         first=prev;}
+//     int search(int e){
+//         Node*cur=first;
+//         int pos=0;
+//         while(cur!=NULL){
+//             if(cur->item==e)return pos;
+//             cur=cur->next;
+//             pos++;
+//         }return -1;
+//     }
+//     int searchpos(int pos){
+//         if(pos<0||pos>lenght){cout<<"out of range";}
+//         // if(isemp()){return;}
+//         Node*curr;
+//         Node*pre;
+//         curr=first->next;pre=first;
+//         for(int i=1;i<pos;i++){pre=curr;curr=curr->next;}
+//         pre->next=curr->next;
+//         if(last==curr){last=pre;}
+//         return curr->item;
+//         }
+//     void print(){
+//         Node*cur=first;
+//         while(cur!=NULL){
+//             cout<<cur->item<<" ";
+//             cur=cur->next;
+//         }
+//     }
+// };
+// int main(){
+//     linklist l;
+//     l.insertfirst(10);
+//     l.insertfirst(660);
+//     l.insertlast(20);
+//     l.insertlast(40);
+//     l.insertlast(48);
+//     l.insertatpos(1,30);
+//     l.insertatpos(2,37);
+//     l.insertfirst(100);
+//     l.insertlast(44);
+//     // cout<<l.search(40);
+//     cout<<l.searchpos(0);
+//     // l.removelast();
+//     // l.removefirst();
+//     // l.remove(20);
+//     // l.removepos(5);
+//     // l.reverse();
+//     // l.print();
+// }
+
+// class doublylinklist{
+//     struct Node{
+//         int item;
+//         Node*next;
+//         Node*prev;
+//     };
+//     Node*first;
+//     Node*last;
+//     int count=0;
+// public:
+//     doublylinklist(){
+//         first=last=NULL;
+//         count=0;}
+//     bool isemp(){return count==0;}
+//     void insertf(int e){
+//         Node*ne=new Node;
+//         ne->item=e;
+//         if(count==0){first=last=ne;ne->next=ne->prev=NULL;}
+//         else{
+//             ne->next=first;
+//             ne->prev=NULL;
+//             first->prev=ne;
+//             first=ne;
+//         }count++;}
+//     void insertl(int e){
+//         Node*ne=new Node;
+//         ne->item=e;
+//         if(count==0){first=last=ne;ne->next=ne->prev=NULL;}
+//         else{
+//             ne->next=NULL;
+//             ne->prev=last;
+//             last->next=ne;
+//             last=ne;
+//         }count++;}
+//     void insertpos(int pos,int e){
+//         if(pos<0||pos>count){cout<<"out of range";}
+//         else{
+//         Node*ne=new Node;
+//         ne->item=e;
+//         if(pos==0){insertf(e);}
+//         else if(pos==count){insertl(e);}
+//         else{
+//             Node*curr=first;
+//             for(int i=1;i<pos;i++){curr=curr->next;}
+//             ne->next=curr->next;
+//             ne->prev=curr;
+//             curr->next=ne;
+//             }}count++;}
+//     void removef(){
+//         if(count==0){cout<<"is empty";}
+//         else if(count==1){delete first;last=first=NULL;}
+//         else{
+//             Node*cur=first;
+//             first=first->next;
+//             first->prev=NULL;
+//             delete cur;
+//         }
+//         count--;
+//     }
+//     void removel(){
+//         if(count==0){cout<<"is empty";}
+//         else if(count==1){delete last;last=first=NULL;}
+//         else{
+//             Node*cur=last;
+//             last=last->prev;
+//             last->next=NULL;
+//             delete cur;
+//         }
+//         count--;
+//     }
+//     void remove(int e){
+//         if(count==0){cout<<"its empty";}
+//         if(first->item==e){removef();}
+//         else if(last->item==e){removel();}
+//         else{
+//             Node*curr=new Node;
+//             while(curr!=NULL&&curr->item!=e){
+//                 curr=curr->next;
+//             }
+//             if(curr==NULL){cout<<"it not found";}
+//             else{
+//                 curr->prev->next=curr->next;
+//                 curr->next->prev=curr->next;
+//                 delete curr;
+//             }
+//         }count-=1;
+//     }
+//     void removepos(int pos){
+//         if(pos<0||pos>count){cout<<"out of range";}
+//         else{
+//             if(pos==0){removef();}
+//             else if(pos==count){removel();}
+//             else{
+//                 Node*curr=first;
+//                 for(int i=1;i<pos;i++){curr=curr->next;}
+//                 if(curr==NULL){cout<<"it not found";}
+//                 else{
+//                     curr->prev->next=curr->next;
+//                     curr->next->prev=curr->next;
+//                     delete curr;}
+//             }
+//         }count--;
+//     }
+//     void print(){
+//         Node*cur=first;
+//         while(cur!=NULL){
+//             cout<<cur->item<<" ";
+//             cur=cur->next;}}
+//     void revprint(){
+//         Node*cur=last;
+//         while(cur!=NULL){
+//             cout<<cur->item<<" ";
+//             cur=cur->prev;}
+//     }
+// };
+// int main(){
+//     doublylinklist d;
+//     d.insertf(20);
+//     d.insertf(24);
+//     d.insertpos(2,50);
+//     d.insertpos(3,270);
+//     d.insertpos(4,295);
+//     d.insertl(30);
+//     d.insertl(34);
+//     d.removef();
+//     d.removel();
+//     d.remove(24);
+//     // d.removepos(1);
+//     d.print();
+//     // cout<<'\n';
+//     // d.revprint();
+// }
+
+//Trees
+
+// #include <iostream>
+// #include <cassert>
+
+// using namespace std;
+
+// struct nodeType
+// {
+//     int     info;
+//    nodeType  *left;
+//    nodeType  *right;
+// };
+
+
+// class binarySearchTreeType
+// {
+// public:
+// 	bool isEmpty();
+// 	bool search(int);
+// 	bool searchRec(int);
+// 	void insert(int);
+// 	void remove(int);
+// 	void inorderTraversal();
+// 	void preorderTraversal();
+// 	void postorderTraversal();
+// 	int treeHeight();
+// 	int treeNodeCount();
+// 	int treeLeavesCount();
+// 	void clearTree();
+// 	binarySearchTreeType();   
+// 	~binarySearchTreeType();         
+// private:
+// 	nodeType *root;
+//     void clear(nodeType* &p);
+//     void inorder(nodeType *p);
+//     void preorder(nodeType *p);
+//     void postorder(nodeType *p);
+//     int height(nodeType *p);
+//     int max(int x, int y);
+//     int nodeCount(nodeType *p);
+//     int leavesCount(nodeType *p);
+// 	void deleteFromTree(nodeType * &p);
+// 	bool searchRecPriv(nodeType *, int);
+// };
+
+
+// binarySearchTreeType::binarySearchTreeType()
+// {
+// 	root = NULL;
+// }
+
+
+// bool binarySearchTreeType::isEmpty()
+// {
+// 	return (root == NULL);
+// }
+
+
+// void binarySearchTreeType::inorderTraversal()
+// {
+// 	inorder(root);
+// }
+
+
+// void binarySearchTreeType::preorderTraversal()
+// {
+// 	preorder(root);
+// }
+
+
+// void binarySearchTreeType::postorderTraversal()
+// {
+// 	postorder(root);
+// }
+
+
+// int binarySearchTreeType::treeHeight()
+// {
+// 	return height(root);
+// }
+
+
+// int binarySearchTreeType::treeNodeCount()
+// {
+// 	return nodeCount(root);
+// }
+
+
+// int binarySearchTreeType::treeLeavesCount()
+// {
+// 	return leavesCount(root);
+// }
+
+
+// void binarySearchTreeType::inorder(nodeType *p)
+// {
+// 	if(p != NULL)
+// 	{
+// 		inorder(p->left);
+// 		cout<<p->info<<" ";
+// 		inorder(p->right);
+// 	}
+// }
+
+
+// void binarySearchTreeType::preorder(nodeType *p)
+// {
+// 	if(p != NULL)
+// 	{
+// 		cout<<p->info<<" ";
+// 		preorder(p->left);
+// 		preorder(p->right);
+// 	}
+// }
+
+
+// void binarySearchTreeType::postorder(nodeType *p)
+// {
+// 	if(p != NULL)
+// 	{
+// 		postorder(p->left);
+// 		postorder(p->right);
+// 		cout<<p->info<<" ";
+// 	}		
+// }
+
+
+// void  binarySearchTreeType::clear(nodeType* &p)
+// {
+// 	if(p != NULL)
+// 	{
+// 		clear(p->left);
+// 		clear(p->right);
+// 		delete p;
+// 		p = NULL;
+// 	}
+// }
+
+
+// void  binarySearchTreeType::clearTree()
+// {
+// 	clear(root);
+// }
+
+// binarySearchTreeType::~binarySearchTreeType()
+// {
+// 	clear(root);
+// }
+
+
+// int binarySearchTreeType::height(nodeType *p)
+// {
+// 	if(p == NULL)
+// 		return 0;
+// 	else
+// 		return 1 + max(height(p->left), height(p->right));
+// }
+
+
+// int binarySearchTreeType::max(int x, int y)
+// {
+// 	if(x >= y)
+// 		return x;
+// 	else
+// 		return y;
+// }
+
+
+// int binarySearchTreeType::nodeCount(nodeType *p)
+// {
+// 	if(p == NULL)
+// 		return 0;
+// 	else
+// 		return 1 + nodeCount(p->left) + nodeCount(p->right);
+// }
+
+
+// int binarySearchTreeType::leavesCount(nodeType *p)
+// {
+// 	if(p == NULL)
+// 		return 0;
+// 	else if ((p->left == NULL) && (p->right == NULL))
+// 		return 1;
+// 	else
+// 		return leavesCount(p->left) + leavesCount(p->right);
+// }
+
+// bool binarySearchTreeType::search(int item)
+// {
+// 	nodeType *current = root;
+
+// 	while(current != NULL)
+// 	{
+// 		if(current->info == item)
+// 			return true;
+// 		else if(current->info > item)
+// 			current = current->left;
+//         else
+//             current = current->right;
+// 	}
+
+//     return false;
+// }
+
+// bool binarySearchTreeType::searchRec(int item)
+// {
+// 	return searchRecPriv(root, item);
+// }
+
+// bool binarySearchTreeType::searchRecPriv(nodeType *p, int item)
+// {
+// 	if(p == NULL)
+// 		return false;
+// 	else if (p->info == item)
+// 		return true;
+// 	else if(p->info > item)
+// 		return searchRecPriv(p->left, item);
+// 	else
+// 		return searchRecPriv(p->right, item);
+// }
+
+// void binarySearchTreeType::insert(int item)
+// {
+//     nodeType *current;  //pointer to traverse the tree
+//     nodeType *trailCurrent; //pointer behind current
+//     nodeType *newNode;  //pointer to create the node
+
+//     newNode = new nodeType;
+//     assert(newNode != NULL);
+//     newNode->info = item;
+//     newNode->left = NULL;
+//     newNode->right = NULL;
+
+//     if(root == NULL)
+//        root = newNode;
+//     else
+//     {
+//        current = root;
+ 
+//        while(current != NULL)
+//        {
+//            trailCurrent = current;
+
+//            if(current->info == item)
+//            {
+//               cout<<"The insert item is already in the list -- ";
+//               cout<<"duplicates are not allowed."<<endl;
+//               return;
+//            }
+//            else
+//               if(current->info > item)
+//                  current = current->left;
+//               else
+//                  current = current->right;
+//        }//end while
+
+//        if(trailCurrent->info > item)
+//           trailCurrent->left = newNode;
+//        else
+//           trailCurrent->right = newNode;
+//    }
+// }
+// //this function only determines the node to be deleted
+// void binarySearchTreeType::remove(int item)
+// {
+// 	nodeType *current;  //pointer to traverse the tree
+// 	nodeType *trailCurrent; //pointer behind current
+
+// 	if(root == NULL)
+// 	{
+// 		cout<<"Cannot delete from the empty tree."<<endl;
+// 		return;
+// 	}
+// 	if(root->info == item)
+// 	{
+// 		deleteFromTree(root);
+// 		return;
+// 	}
+
+// 	//if you get here, then the item to be deleted is not the root
+// 	trailCurrent = root;
+
+// 	if(root->info > item)
+// 		current = root->left;
+// 	else
+// 		current = root->right;
+	
+// 	//search for the item to be deleted.
+// 	while(current != NULL)
+// 	{
+// 		if(current->info == item)
+// 			break;
+// 		else
+// 		{
+// 			trailCurrent = current;
+// 			if(current->info > item)
+// 				current = current->left;
+// 			else
+// 				current = current->right;
+// 		}
+// 	}// once the while is done, current points to either NULL or to the node to be deleted
+
+// 	if(current == NULL)
+// 		cout<<"The delete item is not in the tree."<<endl;	
+// 	else if(trailCurrent->info > item)
+// 		deleteFromTree(trailCurrent->left);
+// 	else
+// 		deleteFromTree(trailCurrent->right);
+// }
+
+// void binarySearchTreeType::deleteFromTree
+// (nodeType* &p)
+// {
+//     nodeType *current;    //pointer to traverse 
+//                                      //the tree
+//     nodeType *trailCurrent;   //pointer behind current
+//     nodeType *temp;        //pointer to delete the node
+
+//     if(p->left == NULL && p->right == NULL){
+// 		delete p;
+// 		p = NULL;}
+//     else if(p->left == NULL){
+// 		temp = p;
+//         p = p->right;
+//         delete temp;}
+//     else if(p->right == NULL){
+// 		temp = p;
+//         p = p->left;
+//         delete temp;}
+//     else{
+//         current = p->left;
+//         trailCurrent = NULL;
+
+//         while(current->right != NULL)
+//         {
+//             trailCurrent = current;
+//             current = current->right;
+//         }//end while
+
+//         p->info = current->info;
+
+//         if(trailCurrent == NULL) //current did not move; 
+//                                  //current == p->left; adjust p
+//             p->left = current->left;
+//         else
+//             trailCurrent->right = current->left;
+
+//         delete current;}//end else
+// }//end deleteFromTree
+
+// int main()
+// {
+//     binarySearchTreeType b;
+//     b.insert(10);
+//     b.insert(20);
+//     b.insert(5);
+// 	b.remove(10);
+// 	b.inorderTraversal();
+// 	b.postorderTraversal();
+// 	b.preorderTraversal();
+// 	return 0;
+// }
+
+//sort
+void selectionsort(int arr[],int n){
+    int temp;
+    for (int i=0;i<n;i++){
+        for (int j=i+1;j<n;j++){
+            if(arr[i]>arr[j]){
+                temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;}}}}
+
+void bublesort(int arr[],int n){
+    int temp;
+    bool flag=true;
+    for (int i=0;i<n;i++){
+        for (int j=0;j<n-1-i;j++){
+            if(arr[j]>arr[j+1]){
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+                flag=false;
+            }}if(flag==true){cout<<"sorted";break;}}}
+
+void insertionsort(int arr[],int n){
+    int key,j;
+    for (int i=1;i<n;i++){
+        key=arr[i];
+        j=i-1;
+        while ( j>=0&&arr[j]>key){
+            arr[j+1]=arr[j];
+            j=j-1;
+            }arr[j+1]=key;}}
+// void merge(int arr[],int l,int m ,int r){//m=l+(r-1)
+//     int i,j,k;
+//     int n1=m-l+1;
+//     int n2=r-m;
+//     int*L=new int[n1],*R=new int[n2];
+//     for(i=0;i<n1;i++){L[i]=arr[l+i];}
+//     for(j=0;j<n2;j++){R[j]=arr[m+j+1];}
+//     i=j=0;
+//     k=l;
+//     while(i<n1&&j<n2){
+//         if(L[i]<=R[j]){
+//             arr[k]=L[i];i++;
+//         }else{
+//             arr[k]=R[i];
+//             j++;
+//         }
+//     }
+//     while(i<n1){
+//             arr[k]=L[i];
+//             i++;
+//             k++;
+//     }
+//     while(i<n2){
+//             arr[k]=R[i];
+//             j++;
+//             k++;
+//     }
+// }
+// void mergesort(int arr[],int l,int r){
+//     if(l<r){
+//         int m=l+(r-1)/2;
+//         mergesort(arr,l,m);
+//         mergesort(arr,m+1,r);
+//         merge(arr,l,m,r);
+//     }
+// }
+// int partition(int arr[],int ibegin,int jend){
+//     int i=ibegin;
+//     int j=jend;
+//     int pivloc=i;
+//     while(true){
+//         while(arr[pivloc]<=arr[j]&&pivloc!=j){j--;}
+//         if(pivloc==j){break;}
+//         else if (arr[pivloc]>arr[j]){
+//             swap(arr[j],arr[pivloc]);
+//             pivloc=j;
+//         }
+//         while(arr[pivloc]>=arr[i]&&pivloc!=i){i++;}
+//         if(pivloc==i){break;}
+//         else if(arr[pivloc]<arr[i]){
+//             swap(arr[i],arr[pivloc]);
+//             pivloc=i;}
+//     }return pivloc;
+// }
+// int partition_2(int arr[],int l,int h){
+//     int i=l;
+//     int j=h;
+//     int p=arr[l];
+//     while(i<j){
+//         do{i++;}while(arr[i]<=p);
+//         do{j--;}while(arr[i]>p);
+//         if(i<j){swap(arr[i],arr[j]);}
+//         }
+//     swap(arr[l],arr[j]);
+//     return j;
+//     }
+
+// void quickmerge(int arr[],int l,int h){
+//     if(l<h){
+//         // int piv=partition(arr,l,h);
+//         int piv=partition_2(arr,l,h);
+//         quickmerge(arr,l,piv-1);
+//         quickmerge(arr,piv+1,h);
+//     }
+// }
+
+
+// Merge sort in C++
+
+#include <iostream>
+using namespace std;
+
+// // Merge two subarrays L and M into arr
+// void merge(int arr[], int p, int q, int r) {
+// // Create L ← A[p..q] and M ← A[q+1..r]
+//     int n1 = q - p + 1;
+//     int n2 = r - q;
+//     int L[n1], M[n2];
+//     for (int i = 0; i < n1; i++)
+//     L[i] = arr[p + i];
+//     for (int j = 0; j < n2; j++)
+//     M[j] = arr[q + 1 + j];
+// // Maintain current index of sub-arrays and main array
+//     int i, j, k;
+//     i = 0;
+//     j = 0;
+//     k = p;
+
+//   // Until we reach either end of either L or M, pick larger among
+//   // elements L and M and place them in the correct position at A[p..r]
+//     while (i < n1 && j < n2) {
+//         if (L[i] <= M[j]) {
+//             arr[k] = L[i];
+//             i++;
+//         } else {
+//             arr[k] = M[j];
+//             j++;
+//         }
+//         k++;
+//     }
+
+//   // When we run out of elements in either L or M,
+//   // pick up the remaining elements and put in A[p..r]
+//     while (i < n1) {
+//         arr[k] = L[i];
+//         i++;
+//         k++;
+//     }
+
+//     while (j < n2) {
+//         arr[k] = M[j];
+//         j++;
+//         k++;
+//     }
+// }
+
+// // Divide the array into two subarrays, sort them and merge them
+// void mergeSort(int arr[], int l, int r) {
+//     if (l < r) {
+//     // m is the point where the array is divided into two subarrays
+//         int m = l + (r - l) / 2;
+
+//         mergeSort(arr, l, m);
+//         mergeSort(arr, m + 1, r);
+
+//     // Merge the sorted subarrays
+//         merge(arr, l, m, r);}
+// }
+
+// // Print the array
+// void printArray(int arr[], int size) {
+//     for (int i = 0; i < size; i++)
+//         cout << arr[i] << " ";
+//     cout << endl;
+// }
+
+// // Driver program
+// int main() {
+//     int arr[] = {6, 5, 12, 10, 9, 1};
+//     int size = sizeof(arr) / sizeof(arr[0]);
+
+//     mergeSort(arr, 0, size - 1);
+
+//     cout << "Sorted array: \n";
+//     printArray(arr, size);
+//     return 0;
+// }
+
+
+// int main(){
+    // int arr[]={10,1,3,2,6,5,6,8,9};
+    // int arr[]={-80,-1,0,1,2,2,2,3,3,4,5,5,5,6,6,7,8,8,9,9,10};
+    // int size= sizeof(arr)/sizeof(arr[0]);
+    // bublesort(arr,size);
+    // // cout<<size;
+    // for(int i :arr){std::cout<<i<<" ";}
+    // cout<<'\n';
+    // selectionsort(arr,size);
+    // for(int i :arr){std::cout<<i<<" ";}
+    // cout<<'\n';
+    // insertionsort(arr,size);
+    // for(int i :arr){std::cout<<i<<" ";}
+    // cout<<'\n';
+    // mergesort(arr,0,size-1);
+    // for(int i :arr){std::cout<<i<<" ";}
+    // printf(arr,size);
+    // cout<<arr;
+    // quickmerge(arr,0,size);
+    // for(int i :arr){std::cout<<i<<" ";}
+    // for(int i=0;i<size;i++){std::cout<<i<<" ";}
+    // quickmerge(arr,0,size);
+    // for(int i :arr){std::cout<<i<<" ";}
+    // for(int i=0;i<size;i++){std::cout<<i<<" ";}
+// }
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int partition(vector<int>& arr, int low, int high) {
+//     int pivot = arr[high];
+//     int i = low - 1;
+//     for (int j = low; j <= high - 1; j++) {
+//         if (arr[j] < pivot) {
+//             i++;
+//             swap(arr[i], arr[j]);
+//         }
+//     }
+
+//     swap(arr[i + 1], arr[high]);  
+//     return i + 1;
+// }
+
+// void quickSort(vector<int>& arr, int low, int high) {
+//     if (low < high) {
+//         // pi is the partition return index of pivot
+//         int pi = partition(arr, low, high);
+
+//         // Recursion calls for smaller elements
+//         // and greater or equals elements
+//         quickSort(arr, low, pi - 1);
+//         quickSort(arr, pi + 1, high);
+//     }
+// }
+
+// int main() {
+//     vector<int> arr = {10, 7, 8, 9, 1, 5};
+//     int n = arr.size();
+//     quickSort(arr, 0, n - 1);
+//     cout << "Sorted Array\n";
+//     for (int i = 0; i < n; i++) {
+//         cout << arr[i] << " ";
+//     }
+//     return 0;
+// }
+// heapify sort
+// void heapify (int arr[],int n,int i){
+//     int l=2*i+1;
+//     int r=2*i+2;
+//     int max=i;
+//     if(l<n&&arr[l]>arr[max]){max=l;}
+//     if(r<n&&arr[r]>arr[max]){max=r;}
+//     if(max!=i){
+//         swap(arr[i],arr[max]);
+//         heapify(arr,n,max);
+//     }
+// }
+// void buildheap(int arr[],int n){
+//     for(int i=n/2-1;i>=0;i--){
+//         heapify(arr,n,i);
+//     }
+// }
+// void heapsort(int arr[],int n){
+//     buildheap(arr,n);
+//     for(int i=n-1;i>=0;i--){
+//         swap(arr[0],arr[i]);
+//         heapify(arr,i,0);
+//     }
+// }
+// int main(){
+//     int arr[]={1,4,6,7,8,43,2,4};
+//     int n=sizeof(arr)/sizeof(arr[0]);
+//     heapsort(arr,n);
+//     for (int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     } }
+
+// int linearsearch(int arr[],int n,int k){
+//     for(int i=0;i<n;i++){
+//         if(arr[i]==k){return i;}
+//     }return -1;
+// }
+// int main(){
+//     int arr[]={1,4,6,7,8,43,2,4};
+//     int n=sizeof(arr)/sizeof(arr[0]);
+//     int num;
+//     cout<<"wrght the numper: ";
+//     cin>>num;
+//     int r=linearsearch(arr,n,num);
+//     cout<<r<<" ";
+//     }
+
+// int binarysearch(int arr[],int l,int h, int k){
+//     if(l<=h){
+//         int m=(l+h)/2;
+//         if(arr[m]==k){return m;}
+//         if(arr[m]>k){return binarysearch(arr,l,m-1,k);}else{return binarysearch(arr, m+1, h,  k);}
+//     }return -1;
+// }
+// int binarysearch(int arr[],int l,int h, int k){
+//     while(l<=h){
+//         int m=(l+h)/2;
+//         if(arr[m]==k){return m;}
+//         if(arr[m]>k){h=m-1;}else{l=m+1;}
+//     }return -1;
+// }
+// int main(){
+//     int arr[]={100,1,4,6,7,8,43,2,77,4,98,9,7,8};
+//     int n=sizeof(arr)/sizeof(arr[0]);
+//     int num;
+//     heapsort(arr,n);
+//     for (int i=0;i<n;i++){cout<<arr[i]<<" ";}
+//     cout<<"wrght the numper: ";
+//     cin>>num;
+//     int r=binarysearch(arr,0,n-1,num);
+//    if (r>=0){cout<<"the numper:"<<arr[r]<<"founded in index: "<<r<<" ";}else{cout<<"it not founded";} }
+
+//Graph

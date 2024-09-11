@@ -1,0 +1,71 @@
+class Solution {
+public:
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        // Create a dummy node to simplify edge cases
+        ListNode* temp = new ListNode();
+        int carry = 0;
+        ListNode* cur = temp; // Pointer to build the result list
+        
+        // Process both lists while either has nodes left
+        while (l1 != NULL || l2 != NULL) {
+            // Get the current values, default to 0 if the list is exhausted
+            int v1 = (l1 != NULL) ? l1->val : 0;
+            int v2 = (l2 != NULL) ? l2->val : 0;
+            
+            // Calculate the sum and carry
+            int sum = v1 + v2 + carry;
+            carry = sum / 10; // Update carry
+            cur->next = new ListNode(sum % 10); // Create a new node with the unit digit
+            cur = cur->next; // Move to the new node
+            
+            // Move to the next nodes in the input lists if they are not NULL
+            if (l1 != NULL) l1 = l1->next;
+            if (l2 != NULL) l2 = l2->next;
+        }
+        
+        // If there's any carry left, add a new node with the carry value
+        if (carry != 0) {
+            cur->next = new ListNode(carry);
+        }
+        
+        // Return the next of dummy node which is the head of the result list
+        return temp->next;
+    }
+};
+the code by py:
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution:
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        # Create a dummy node to simplify edge cases
+        dummy = ListNode()
+        current = dummy
+        carry = 0
+        
+        # Traverse both lists
+        while l1 is not None or l2 is not None:
+            # Get the current values from l1 and l2
+            val1 = l1.val if l1 is not None else 0
+            val2 = l2.val if l2 is not None else 0
+            
+            # Calculate sum and carry
+            total = val1 + val2 + carry
+            carry = total // 10
+            current.next = ListNode(total % 10)
+            current = current.next
+            
+            # Move to the next nodes in l1 and l2 if they exist
+            if l1 is not None:
+                l1 = l1.next
+            if l2 is not None:
+                l2 = l2.next
+        
+        # If there's any carry left after the loop, add a new node with the carry value
+        if carry > 0:
+            current.next = ListNode(carry)
+        
+        # Return the next node of the dummy, which is the head of the result list
+        return dummy.next

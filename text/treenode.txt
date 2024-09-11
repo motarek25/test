@@ -1,0 +1,51 @@
+      /-----\
+     /       \
+left---      ---right
+Binary tree traversal:
+pre-order traversal->root left right
+in-order traversal->left root right
+post-order traversal->left right root
+level order
+Binary Search Tree:
+best case:O(log2 n),worse case:O(n)
+successor->search too long to discuse
+predecessor
+#https://github.com/Adel-Nasim/Data-Structures/blob/master/Binary%20Search%20Tree.txt
+Data Compression (by david huffman):to compress the text by reduce the bits by rerecognize it with sanding the table --read more
+in c++:
+class Solution {
+public:
+    TreeNode* invertTree(TreeNode* root) {
+        if(root== nullptr){return nullptr;}
+        TreeNode*temp=root->left;
+        root->left=root->right;
+        root->right=temp;
+        invertTree(root->left);
+        invertTree(root->right);
+        return root;
+        
+    }
+};
+inpy:
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root:return 
+        temp=root.left
+        root.left=root.right
+        root.right=temp
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+        return root
+types:
+-full binary tree:all node have 2 or 0 child
+-complete:all level is complete exipt last level as full but all node have 2 child exipt last line
+-perfect binary tree when all node have 2 child and all leaves at same level
+balanced binary tree:
+when the height of tree =O(log2n).|h(left)-h(reight)|<=1
+Adegenerate tree:all node only have one child
+to max number if node in any level=2^L,L:number of level
+ to max number if node in the tree:(2^(h+1))-1,h=log2(n+1)-1
+ex:
+
+
+

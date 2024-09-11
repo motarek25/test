@@ -1,0 +1,26 @@
+#https://www.atlassian.com/git/tutorials
+to add name:$ git config --global user.name "Emt"
+to add email:$ git config --global user.email "mohamedterkmt548333@gmail.com"
+~
+to show name:$ git config user.name
+Emt
+~
+to show email:$ git config user.email
+mohamedterkmt548333@gmail.com
+-$git config --list
+-$ git:to show all commnds
+$ git init "first"
+Initialized empty Git repository in C:/Users/ptof/first/.git/
+ls:to show all paths
+ cd "first":to be in the project
+ git status:to know the  situation of the git 
+$ touch index.html:to start work on project
+$ git add index.html
+$ git commit -m "creat index.html"
+$git log 
+$ git checkout  76bf0b9da63d29133684aea597697825b9b60330:to remove the update
+git branch :to see the branshes
+git branch new:to create new one(note:new is the name..it can change to any thing)
+
+to conect to git hub: git remote add origin  https://github.com/motarek25/test.git
+to check remote:git remote -v

@@ -1,0 +1,6 @@
+time complexity
+factors:
+1-single /multi processor,2-core speed (GHz),3-32/64bit,4-read spead,5-programing language,6-compiler,7-input
+
+frequncy count method :
+to count the time of the function in time unit ("it is way to try to find time which is required to this fun()")
